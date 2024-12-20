@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thomas M. Boccuto - Software Engineer & DevOps Expert</title>
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #1d4ed8;
+            --accent: #06b6d4;
+            --text: #1f2937;
+            --bg: #0a0a0a;
+            --card-bg: #1a1a1a;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes slideInLeft {
+            from { transform: translateX(-100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #fff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            background: var(--bg);
+            overflow-x: hidden;
+        }
+
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .header {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(-45deg, #000428, #004e92, #2a2a72);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            padding: 2rem 0;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 0%, var(--bg) 100%);
+            opacity: 0.7;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            padding: 2rem;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--accent);
+            box-shadow: 0 0 25px rgba(6, 182, 212, 0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: slideInLeft 1s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+            animation: slideInRight 1s ease-out;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            cursor: pointer;
+            height: 40px;
+            width: 80px;
+        }
+
+        .chevron-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+        }
+
+        .chevron {
+            position: absolute;
+            width: 28px;
+            height: 8px;
+            opacity: 0;
+            transform: scale3d(0.5, 0.5, 0.5);
+            animation: move 3s ease-out infinite;
+            left: 50%;
+            top: 50%;
+            margin-left: -14px; /* Half of width */
+            margin-top: -4px;  /* Half of height */
+        }
+
+        .chevron:first-child {
+            animation: move 3s ease-out 1s infinite;
+        }
+
+        .chevron:nth-child(2) {
+            animation: move 3s ease-out 2s infinite;
+        }
+
+        .chevron:before,
+        .chevron:after {
+            content: ' ';
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 51%;
+            background: var(--accent);
+        }
+
+        .chevron:before {
+            left: 0;
+            transform: skew(0deg, 30deg);
+        }
+
+        .chevron:after {
+            right: 0;
+            width: 50%;
+            transform: skew(0deg, -30deg);
+        }
+        @keyframes move {
+            25% {
+                opacity: 1;
+                transform: translate3d(0, 30px, 0);
+            }
+            33% {
+                opacity: 1;
+                transform: translate3d(0, 40px, 0);
+            }
+            67% {
+                opacity: 1;
+                transform: translate3d(0, 40px, 0);
+            }
+            100% {
+                opacity: 0;
+                transform: translate3d(0, 55px, 0);
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 1rem;
+        }
+
+        .section {
+            margin: 6rem 0;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: var(--transition);
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            color: #fff;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .experience-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .experience-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.03));
+            pointer-events: none;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .company {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .role {
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+        }
+
+        .meta {
+            text-align: right;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .highlights {
+            list-style-type: none;
+        }
+
+        .highlight-item {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .highlight-item::before {
+            content: '▹';
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .skill-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.9);
+            padding: 0.5rem 1rem;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .skill-tag:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+            color: #000;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--accent);
+            color: #000;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            margin-top: 2rem;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(6, 182, 212, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .meta {
+                text-align: left;
+            }
+
+            .section {
+                margin: 3rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <title>Thomas Martin Boccuto</title>
+    <canvas id="particle-canvas"></canvas>
+       <div class="content">
+        <header class="header">
+            <div class="hero-content">
+                <div class="hero-left">
+                    <div class="profile-image">
+                        <img src="me.JPG" alt="Thomas M. Boccuto" />
+                    </div>
+                </div>
+                <div class="hero-right">
+                    <h1 class="hero-title">Thomas M. Boccuto</h1>
+                    <p class="hero-subtitle">Software Engineer</p>
+                    <div class="hero-summary">
+                        <p>Hi welcome to my professional page. I am a software engineer sitting out of the Philadelphia area. Along with software, I like working out, fishing, beach trips or spending time with my family and friends. Please Write me an email if you would to connect.</p>
+                        <div class="hero-links">
+                            <a href="mailto:tom@peeps.sh" class="hero-link">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                                tom@peeps.sh
+                            </a>
+                            <a href="https://github.com/tboccuto" class="hero-link">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                                </svg>
+                                GitHub
+                            </a>
+                            <a href="https://www.linkedin.com/in/thomas-boccuto-7b9499197" class="hero-link">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                    <rect width="4" height="12" x="2" y="9"/>
+                                    <circle cx="4" cy="4" r="2"/>
+                                </svg>
+                                LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="chevron"></div>
+                <div class="chevron"></div>
+                <div class="chevron"></div>
+            </div>
+        </header>
+
+        <main>
+            <section id="experience" class="section">
+                <div class="container">
+                    <h2 class="section-title">Experience</h2>
+                    <div class="experience-grid" id="experienceGrid"></div>
+                </div>
+            </section>
+
+            <section id="skills" class="section">
+                <div class="container">
+                    <h2 class="section-title">Expertise</h2>
+                    <div class="skills-grid" id="skillsGrid"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Particle animation
+        class ParticleCanvas {
+            constructor() {
+                this.canvas = document.getElementById('particle-canvas');
+                this.ctx = this.canvas.getContext('2d');
+                this.particles = [];
+                this.mousePosition = { x: 0, y: 0 };
+                
+                this.resize();
+                this.init();
+                this.animate();
+                
+                window.addEventListener('resize', () => this.resize());
+                document.addEventListener('mousemove', (e) => {
+                    this.mousePosition.x = e.clientX;
+                    this.mousePosition.y = e.clientY;
+                });
+            }
+            
+            resize() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+            }
+            
+            init() {
+                this.particles = [];
+                const numberOfParticles = (this.canvas.width * this.canvas.height) / 15000;
+                
+                for (let i = 0; i < numberOfParticles; i++) {
+                    this.particles.push({
+                        x: Math.random() * this.canvas.width,
+                        y: Math.random() * this.canvas.height,
+                        radius: Math.random() * 2 + 1,
+                        dx: (Math.random() - 0.5) * 0.5,
+                        dy: (Math.random() - 0.5) * 0.5,
+                        opacity: Math.random() * 0.5 + 0.2
+                    });
+                }
+            }
+            
+            animate() {
+                requestAnimationFrame(() => this.animate());
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                
+                this.particles.forEach(particle => {
+                    particle.x += particle.dx;
+                    particle.y += particle.dy;
+                    
+                    if (particle.x < 0) particle.x = this.canvas.width;
+                    if (particle.x > this.canvas.width) particle.x = 0;
+                    if (particle.y < 0) particle.y = this.canvas.height;
+                    if (particle.y > this.canvas.height) particle.y = 0;
+                    
+                    const dx = this.mousePosition.x - particle.x;
+                    const dy = this.mousePosition.y - particle.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (distance < 100) {
+                        particle.x -= (dx / distance) * 0.5;
+                        particle.y -= (dy / distance) * 0.5;
+                    }
+                    
+                    this.ctx.beginPath();
+                    this.ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+                    this.ctx.fillStyle = `rgba(6, 182, 212, ${particle.opacity})`;
+                    this.ctx.fill();
+                });
+            }
+        }
+
+        // Data
+        const portfolioData = {
+            experiences: [
+{
+                    company: 'peepnest.com',
+                    role: 'Founder and Lead Software Engineer',
+                    location: 'Philadelphia, PA',
+                    period: 'June 2024 – Present',
+                    highlights: [
+                      "Engineered a robust Flask-based REST API backend with JWT authentication, handling user sessions, and managing secure access control through custom token validation middleware",
+                      "Implemented real-time messaging functionality using Flask-SocketIO, enabling instant chat features with room-based communication and typing indicators",
+                      "Designed and integrated a comprehensive notification system supporting multiple notification types (likes, comments, replies) with real-time updates",
+                      "Built advanced geospatial post discovery system using Haversine formula for location-based content filtering and age-based user matching",
+                      "Developed sophisticated media handling system integrating with AWS S3 and CloudFront for scalable image/media storage and delivery",
+                      "Implemented SQLAlchemy ORM with complex relationships across 12+ models, including optimized queries and comprehensive schema for social features",
+                      "Designed secure authentication system with JWT, refresh tokens, CSRF protection, and secure password hashing",
+                      "Developed RESTful endpoints for social media functionality with real-time websocket communication and sophisticated post filtering",
+                      "Implemented performance optimizations including Flask-Caching, efficient pagination, and optimized database queries",
+                      "Integrated third-party services including Twilio for OTP verification, with comprehensive error handling and system monitoring",
+                      "Architected and deployed a complete AWS cloud infrastructure using Terraform IaC, including VPC configuration, multi-AZ setup, and high-availability design patterns",
+                      "Implemented containerized microservices architecture using AWS ECS Fargate, with separate services for React frontend and Flask backend applications",
+                      "Designed robust security infrastructure including custom security groups, IAM roles, and policies for least-privilege access control across all AWS services",
+                      "Configured production-grade application load balancer (ALB) with HTTPS termination, automated certificate management, and custom routing rules for frontend/backend traffic",
+                      "Set up comprehensive monitoring and logging infrastructure using CloudWatch, including custom metric alarms, log groups, and performance monitoring",
+                      "Engineered scalable data storage solutions combining RDS MySQL for relational data and S3 with CloudFront CDN for media content delivery",
+                      "Built automated networking infrastructure with public subnets, internet gateways, and route tables supporting high-availability across multiple availability zones",
+                      "Implemented secure database configuration with custom subnet groups, automated backups, and controlled access through security groups",
+                      "Created automated CI/CD infrastructure linking ECR repositories to Fargate deployments with zero-downtime updates",
+                      "Developed infrastructure monitoring with CloudWatch alarms for CPU and memory utilization, with automated scaling capabilities",
+                      "Implemented CI/CD using GitHub Actions for a multi-service architecture with frontend and backend deployments",
+                      "Built sophisticated change detection system to trigger selective deployments based on modified files",
+                      "Configured automated AWS ECS deployments with ECR image management for both React frontend and Flask backend services",
+                      "Implemented service stability checks and secure AWS credential management in deployment pipeline",
+                      "Created robust GitHub Actions workflow with parallel deployment jobs and comprehensive environment configuration",
+                      "Architected containerized deployment strategy using Docker with separate frontend and backend pipelines"
+                    ]
+                },
+                {
+                    company: 'University of Pennsylvania',
+                    role: 'DevOps Engineer',
+                    location: 'Philadelphia, PA',
+                    period: 'April 2023 – Present',
+                   highlights: [
+                'Migrated Python3 Azure Functions to EC2 Elastic Beanstalk with Flask API Backend achieving significantly reduced cloud costs',
+                'Performed migration of a Flutter Application from Twitter API v2 to Twitter API v3',
+                'Led the migration of internal faculty voting application from .NET architecture to Python3 microservices using NoSQL AWS DynamoDB for a serverless datastore solution achieving low latency at any scale',
+                'Created an on-premises data lake containing 7 Terabytes of Reddit comments and submissions. Implemented partition key structure for the dataset\'s migration to AWS S3 and Athena, supporting PhD dissertation defense and grant funding',
+                'Engineered a single-day calendar view API for an internal room request management application, utilizing MSSQL and fastAPI',
+                'Migrated purchasing acquisition system, building an admin portal with SSO login, dynamic query tools, and document management capabilities that enabled comprehensive audit tracking and version control of all requests',
+                'Collaborated closely with directors and key stakeholders to design an Employee Management System, ensuring alignment with organizational goals and stakeholder requirements',
+                'Developed research tool implementing pagination on NFS file storage spanning 10s of gigabytes of media assets from Instagram posts',
+                'Incorporated Cloudformation stack for Amazon Transcribe. Utilized Server Side Events for real time view updates Transcription workloads.'
+            ]
+            },
+            {
+                    company: 'Save Philly By Data',
+                    role: 'Data Science/ Data Engineer',
+                    location: 'Philadelphia, PA',
+                    period: 'Jan 2023 – April 2023',
+                    highlights: [
+                        'Developed robust model leveraging Carto SQL for police dispatch analysis',
+                        'Generate Crime maps based on 5 year interrvals across 33 different crime categories',
+                        'Distrubtion plots with fixed bandwidth 1.0 sampiling the gaussian',
+                        'Additive decomposition from seasonal decomposition, with period of 30 to emphasize analuzing trends',
+                        'https://s3.amazonaws.com/savephillybydata.com/cProfileGraph.html',
+                        'cProfile execution graph to view runtime and for furhter profiling with the model',
+                        'Orchestrated dynamic visualization of 150,000+ coordinates',
+                        'Implemented fast marker clustering algorithm for efficient data display',
+                        'Generated 33 interactive crime maps with jQuery color bars',
+                        'https://s3.amazonaws.com/savephillybydata.com/index.html',
+                    ]
+                },
+                {
+          company: 'Ursinus College - Mathematics REU',
+          role: 'Research Fellow',
+          location: 'Collegeville, PA',
+          period: 'Summer 2021',
+          highlights: [
+              'Conducted NSF-funded research (grant #1851948) on video motion amplification techniques as part of a collaborative team',
+              'Extended Eulerian magnification algorithms to work with 3D depth camera data, enabling visualization of subtle geometric changes',
+              'Developed novel pipeline using implicit surface representation to reconstruct and amplify 3D motions from multiple camera angles',
+              'Implemented signal processing techniques including Riesz transforms and signed distance functions for motion analysis',
+              'Successfully amplified and visualized imperceptible motions like heartbeat-induced neck movements and breathing patterns in 3D',
+              'Presented findings at the 23rd Annual Summer Fellows Symposium at Ursinus College',
+              'Research published in Mathematics Summer Fellows digital repository with ongoing impact (33+ downloads)'
+          ]
+      },
+                  {
+                    company: 'SV Sports',
+                    role: 'Software Engineer Contract',
+                    location: 'Philadelphia, PA',
+                    period: 'January 2023 - April 2023',
+                    highlights: [
+                      'Created Factory pattern for Django application implementing JWT tokens for authorization and authentication',
+                      'Integrated MSSQL Server to Django application',
+                      'Staged NPM frontend environment for Anguluar applicaiton'
+                    ]
+                },
+
+
+                {
+                    company: 'Digital Spark @ Ursinus College',
+                    role: 'Digital Marketing and Financial Automation',
+                    location: 'Philadelphia, PA',
+                    period: 'June 2022 – August 2022',
+                    highlights: [
+                    'Developed end to end software solution that aggregates financial records and statistics associated to marketing for a local small business',
+                    'Implement and provide data visualization with linear regression models for financial forcasting.',
+                    'Created marketing materials that achieved 20k views',
+                    ]
+                },
+
+
+
+
+
+
+            ],
+            skills: {
+                'Languages & Core': [
+                    'Python3', 'JavaScript', 'Golang', 'Swift', 'SQL', 'Bash', 'HCL'
+                ],
+                'Cloud & Infrastructure': [
+                    'AWS IAM', 'ECS', 'ECR', 'EC2', 'Cloudfront', 'S3', 
+                    'Athena', 'DynamoDB', 'RDS', 'CloudFormation', 'Docker', 'Elastic Beanstalk',
+                    'CloudWatch', 'Route53', 'Lambda', 'Api Gateway', 'Terraform' 
+                ],
+                'Web Technologies': [
+                    'Flask', 'FastAPI', 'Django', 'WebSocket', 'JWT', 
+                    'SSO', 'REST APIs', 'Microservices'
+                ],
+                'Development Tools': [
+                    'Git', 'GitHub Actions', 'Vim', 'Tmux', 'VSCode',
+                    'Test-Driven Development', 'Event-Driven Architecture'
+                ],
+                'Scientific Libraries': [
+                  'Numpy', 'Scikit', 'Pandas', 'Pyarrow', 'Langchain', 'OpenAI', 'Anthropic', 'Matplotlib', 'OpenCV', 'Pillow'
+                ],
+                'Other' :[
+                  'Skateboarding', 'Bodyboarding', 'fishing', 'Working out', 'Video Games'
+                ]
+            }
+        };
+
+        
+        class PortfolioRenderer {
+            static experienceCard({ company, role, location, period, highlights }) {
+                const card = document.createElement('div');
+                card.className = 'experience-card';
+                
+                card.innerHTML = `
+                    <div class="experience-header">
+                        <div>
+                            <div class="company">${company}</div>
+                            <div class="role">${role}</div>
+                        </div>
+                        <div class="meta">
+                            <div>${location}</div>
+                            <div>${period}</div>
+                        </div>
+                    </div>
+                    <ul class="highlights">
+                        ${highlights.map(highlight => `
+                            <li class="highlight-item">${highlight}</li>
+                        `).join('')}
+                    </ul>
+                `;
+                
+                return card;
+            }
+
+            static skillCard({ category, skills }) {
+                const card = document.createElement('div');
+                card.className = 'skill-card';
+                
+                card.innerHTML = `
+                    <h3 class="skill-title">${category}</h3>
+                    <div class="skill-tags">
+                        ${skills.map(skill => `
+                            <span class="skill-tag">${skill}</span>
+                        `).join('')}
+                    </div>
+                `;
+                
+                return card;
+            }
+        }
+
+        class ScrollAnimationHandler {
+            constructor() {
+                this.sections = document.querySelectorAll('.section');
+                this.observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px'
+                };
+                
+                this.observer = new IntersectionObserver(this.handleIntersection.bind(this), this.observerOptions);
+                this.sections.forEach(section => this.observer.observe(section));
+            }
+
+            handleIntersection(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        this.observer.unobserve(entry.target);
+                    }
+                });
+            }
+        }
+
+        class SmoothScroll {
+            static scrollTo(element) {
+                window.scrollTo({
+                    behavior: 'smooth',
+                    top: element.offsetTop - 50
+                });
+            }
+
+            static init() {
+                document.querySelector('.scroll-indicator').addEventListener('click', () => {
+                    const experienceSection = document.getElementById('experience');
+                    this.scrollTo(experienceSection);
+                });
+            }
+        }
+
+      
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            new ParticleCanvas();
+
+            
+            const experienceGrid = document.getElementById('experienceGrid');
+            portfolioData.experiences.forEach(exp => {
+                experienceGrid.appendChild(PortfolioRenderer.experienceCard(exp));
+            });
+
+           
+            const skillsGrid = document.getElementById('skillsGrid');
+            Object.entries(portfolioData.skills).forEach(([category, skills]) => {
+                skillsGrid.appendChild(PortfolioRenderer.skillCard({ category, skills }));
+            });
+
+            
+            new ScrollAnimationHandler();
+            SmoothScroll.init();
+        });
+    </script>
+</body>
+</html>
