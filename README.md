@@ -1,2 +1,2 @@
-# thomasmartin.boccuto.net
-# thomasmartin.boccuto.net
+#### Public read me for personal professional website
+
