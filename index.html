@@ -148,6 +148,82 @@
                 <li>Extended Eulerian magnification algorithms to work with 3D depth camera data</li>
                 <li>Developed novel pipeline using implicit surface representation</li>
             </ul>
+            
+   
+   <div style="display: flex; flex-direction: column; gap: 20px;">
+       <!-- Images/Videos Row -->
+
+
+
+           <div style="text-align: justify;">
+           <h3>Abstract</h3>
+           <p>
+ Ordinary videos capture a surprising amount of hidden, visually imperceptible information. For instance, videos of peoples' faces may capture color changes in the skin and artery motion from heartbeats, while videos of mechanical systems can capture subtle vibrations indicating imminent failure. Algorithms can extract and exaggerate these signals for visualization on top of the original videos. In particular, Eulerian magnification algorithms sidestep the need to track hidden motions directly and instead devise multiscale bandpass filters to amplify signals in local spatial regions. In this work, we extend these techniques beyond color videos to geometric video data captured by 3D depth cameras such as the Microsoft Kinect. In our framework, we can spatially amplify a "bulging of the neck" during a heartbeat or the expansion of a chest/abdomen during a breath. We then exaggerate and display these signals as evolving 3D shapes. We explore pipelines based both on implicit and parameterized surface representations, and we discuss the merits, drawbacks, and challenges of both representations compared to ordinary color videos
+           </p>
+           <p>
+               Key contributions include:
+               <ul>
+                   <li>Development of spatial amplification techniques to highlight subtle geometric changes (e.g., neck bulging during heartbeats, chest expansion during breathing)</li>
+                   <li>Implementation of both implicit and parameterized surface representation pipelines</li>
+                   <li>Comparative analysis of these representations against traditional color video approaches</li>
+                   <li>Visualization of amplified signals as evolving 3D shapes</li>
+               </ul>
+           </p>
+       </div>
+
+
+     <table border="1" style="width: 100%;">
+        Table below for Week 1: Reproduce Linear Magnification with bandpass filter. 
+        <tr>
+            <th>Original Paper</th>
+            <th>Link</th>
+            <th>results</th>
+            <th>code, authors: @tboccuto, @ctralie</th>
+        </tr>
+        <tr>
+            
+            <td>Eulerian Video Magnification for Revealing Subtle Changes in the World</td>
+            <td><a href="https://people.csail.mit.edu/mrub/papers/vidmag.pdf">Link</a></td>
+            <td>
+               <video width="400px" height="400px" controls>
+                   <source src="https://thomasmartin.boccuto.net/FaceColorAmplification.mp4" type="video/mp4">
+               </video>
+            </td>
+            
+            <td>
+                 <img src="https://thomasmartin.boccuto.net/lma-code.png" style="width: 24%; height: auto;">
+            <td>
+
+
+        </tr>
+    </table>
+
+       <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+           <img src="https://thomasmartin.boccuto.net/NSF-ursinus-reu-normals-peanut.png" style="width: 32%; height: auto;">
+           <video width="32%" controls>
+               <source src="https://thomasmartin.boccuto.net/PeanutLevelsets.mp4" type="video/mp4">
+           </video>
+           <video width="32%" controls>
+               <source src="https://thomasmartin.boccuto.net/PeanutLevelsets_Amp.mp4" type="video/mp4">
+           </video>
+       </div>
+
+
+       
+
+       <!-- Additional Visual Pipeline -->
+       <div style="display: flex; justify-content: space-between; gap: 10px;">
+           <img src="https://thomasmartin.boccuto.net/nsf-reu-signed-distance-image-presentation.png" style="width: 48%; height: auto;">
+           <img src="https://thomasmartin.boccuto.net/SVD-profiling.png" style="width: 48%; height: auto;">
+           
+       </div>
+   </div>
+
+
+
+
+
+
         </div>
 
         <div>
@@ -312,79 +388,7 @@
     </div>
 </section>
 
-<section>
-   <h2>Eulerian Video Magnification for Depth Videos</h2>
-   
-   <div style="display: flex; flex-direction: column; gap: 20px;">
-       <!-- Images/Videos Row -->
-
-
-
-           <div style="text-align: justify;">
-           <h3>Abstract</h3>
-           <p>
- Ordinary videos capture a surprising amount of hidden, visually imperceptible information. For instance, videos of peoples' faces may capture color changes in the skin and artery motion from heartbeats, while videos of mechanical systems can capture subtle vibrations indicating imminent failure. Algorithms can extract and exaggerate these signals for visualization on top of the original videos. In particular, Eulerian magnification algorithms sidestep the need to track hidden motions directly and instead devise multiscale bandpass filters to amplify signals in local spatial regions. In this work, we extend these techniques beyond color videos to geometric video data captured by 3D depth cameras such as the Microsoft Kinect. In our framework, we can spatially amplify a "bulging of the neck" during a heartbeat or the expansion of a chest/abdomen during a breath. We then exaggerate and display these signals as evolving 3D shapes. We explore pipelines based both on implicit and parameterized surface representations, and we discuss the merits, drawbacks, and challenges of both representations compared to ordinary color videos
-           </p>
-           <p>
-               Key contributions include:
-               <ul>
-                   <li>Development of spatial amplification techniques to highlight subtle geometric changes (e.g., neck bulging during heartbeats, chest expansion during breathing)</li>
-                   <li>Implementation of both implicit and parameterized surface representation pipelines</li>
-                   <li>Comparative analysis of these representations against traditional color video approaches</li>
-                   <li>Visualization of amplified signals as evolving 3D shapes</li>
-               </ul>
-           </p>
-       </div>
-
-
-     <table border="1" style="width: 100%;">
-        Table below for Week 1: Reproduce Linear Magnification with bandpass filter. 
-        <tr>
-            <th>Original Paper</th>
-            <th>Link</th>
-            <th>results</th>
-            <th>code, authors: @tboccuto, @ctralie</th>
-        </tr>
-        <tr>
-            
-            <td>Eulerian Video Magnification for Revealing Subtle Changes in the World</td>
-            <td><a href="https://people.csail.mit.edu/mrub/papers/vidmag.pdf">Link</a></td>
-            <td>
-               <video width="400px" height="400px" controls>
-                   <source src="https://thomasmartin.boccuto.net/FaceColorAmplification.mp4" type="video/mp4">
-               </video>
-            </td>
-            
-            <td>
-                 <img src="https://thomasmartin.boccuto.net/lma-code.png" style="width: 24%; height: auto;">
-            <td>
-
-
-        </tr>
-    </table>
-
-       <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
-           <img src="https://thomasmartin.boccuto.net/NSF-ursinus-reu-normals-peanut.png" style="width: 32%; height: auto;">
-           <video width="32%" controls>
-               <source src="https://thomasmartin.boccuto.net/PeanutLevelsets.mp4" type="video/mp4">
-           </video>
-           <video width="32%" controls>
-               <source src="https://thomasmartin.boccuto.net/PeanutLevelsets_Amp.mp4" type="video/mp4">
-           </video>
-       </div>
-
-
-       
-
-       <!-- Additional Visual Pipeline -->
-       <div style="display: flex; justify-content: space-between; gap: 10px;">
-           <img src="https://thomasmartin.boccuto.net/nsf-reu-signed-distance-image-presentation.png" style="width: 48%; height: auto;">
-           <img src="https://thomasmartin.boccuto.net/SVD-profiling.png" style="width: 48%; height: auto;">
-           
-       </div>
-   </div>
-</section>
-
+<
 <section>
     <h2>Some of my Undergraduate Computer Science Coursework @ Ursinus class of 2022</h2>
     <h3>CS 174 Object Oriented Programming (OOP)</h3>
