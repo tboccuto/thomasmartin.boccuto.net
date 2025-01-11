@@ -2,8 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script type="text/javascript" src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
     <style type="text/css">
     body {font-family: 'Lucida Console', monospace;} .reinvent-section {padding: 2rem 0; margin: 2rem auto; max-width: 1200px;} .reinvent-header {text-align: center; margin-bottom: 2rem;} .reinvent-header h2 {font-size: 2.5rem; margin-bottom: 1rem; color: #333;} .reinvent-header p {font-size: 1.2rem; color: #666; max-width: 800px; margin: 0 auto;} .media-grid {display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 2rem 0;} .media-item {position: relative; border-radius: 8px; overflow: hidden; aspect-ratio: 1; transition: transform 0.3s ease;} .media-item:hover {transform: scale(1.05);} .media-item img {width: 100%; height: 100%; object-fit: cover;} .media-item.video {grid-column: span 2; grid-row: span 2;} .media-item video {width: 100%; height: 100%; object-fit: cover;} @media (max-width: 768px) { .media-grid {grid-template-columns: repeat(2, 1fr);}} @media (max-width: 480px) { .media-grid {grid-template-columns: 1fr;} .media-item.video {grid-column: auto; grid-row: auto;}}
 
@@ -26,7 +24,7 @@
                     <h1 class="hero-title">Thomas M. Boccuto</h1>
                     <p class="hero-subtitle">Software Engineer</p>
                     <div class="hero-summary">
-                        <p>Hi welcome to my professional page. I am a software engineer sitting out of the Philadelphia area. Along with software, I like working out, fishing, beach trips or spending time with my family and friends. Please write me an email if you would to connect.</p>
+                        <p>Hi welcome to thomasmartin.boccuto.net. I am a software engineer sitting out of the Philadelphia area. Along with software, I like exercising, fishing, beach trips or spending time with my family and friends. Please write me an email if you would to connect.</p>
                         <div class="hero-links">
                             <a href="mailto:tom@peeps.sh" class="hero-link">
                                 <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -70,13 +68,35 @@
     <div class="experiences">
         <div>
             <h3 class="company">peepnest.com</h3>
-            <div class="role">Founder and Lead Software Engineer</div>
-            <div class="period">Philadelphia, PA | June 2024 – Present</div>
+            <div class="role">Founder</div>
+            
             <ul>
-                <li>Engineered a robust Flask-based REST API backend with JWT authentication, handling user sessions, and managing secure access control through custom token validation middleware</li>
-                <li>Implemented real-time messaging functionality using Flask-SocketIO, enabling instant chat features with room-based communication and typing indicators</li>
-                <li>Designed and integrated a comprehensive notification system supporting multiple notification types (likes, comments, replies) with real-time updates</li>
-                <!-- ... rest of peepnest.com highlights ... -->
+            <li>Built Flask REST API with JWT auth and custom token validation</li>
+            <li>Implemented real-time chat using Flask-SocketIO with room management</li>
+            <li>Designed notification system for likes, comments, and replies</li>
+            <li>Implemented geospatial discovery using Haversine for location/age matching</li>
+            <li>Wrote terraform for mp4/mp3 asset and media architecture utilizing AWS S3/CloudFront integration</li>
+            <li>Designed relational database utilizing SQLAlchemy schema with 10+ models</li>
+            <li>Implemented JWT auth with refresh tokens and CSRF protection</li>
+            <li>Built RESTful endpoints with websocket communication</li>
+            <li>Optimized performance with Flask-Caching and Mariadb Indices, optimizing page load times and queries</li>
+            <li>Integrated Twilio OTP verification with error handling</li>
+            <li>Deployed AWS infrastructure via Terraform with multi-AZ HA setup</li>
+            <li>Built microservices using ECS Fargate for React/Flask stack</li>
+            <li>Configured IAM roles and security groups for least-privilege access</li>
+            <li>Set up ALB with HTTPS termination with controller routing by routePrefix and/or http headers.</li>
+            <li>Implemented CloudWatch monitoring with custom metrics and alerts</li>
+            <li>Built data storage with RDS MySQL and S3/CloudFront CDN</li>
+            <li>Created HA networking across multiple AZs</li>
+            <li>Configured RDS with automated backups and security groups</li>
+            <li>Built zero-downtime CI/CD pipeline with ECR and Fargate</li>
+            <li>Implemented auto-scaling based on CPU/memory metrics</li>
+            <li>Created multi-service CI/CD with GitHub Actions</li>
+            <li>Built change detection system for selective deployments</li>
+            <li>Automated ECS deployments with ECR image management</li>
+            <li>Implemented deployment stability checks and AWS credential management</li>
+            <li>Created parallel deployment workflows with environment configs</li>
+            <li>Built containerized deployment with separate frontend/backend pipelines</li>
             </ul>
         </div>
 
@@ -85,10 +105,15 @@
             <div class="role">DevOps Engineer</div>
             <div class="period">Philadelphia, PA | April 2023 – Present</div>
             <ul>
-                <li>Migrated Python3 Azure Functions to EC2 Elastic Beanstalk with Flask API Backend achieving significantly reduced cloud costs</li>
-                <li>Performed migration of a Flutter Application from Twitter API v2 to Twitter API v3</li>
-                <li>Migrated internal faculty voting application from .NET architecture to Python3 microservices and completing lift in shift to cloud.</li>
-                <!-- ... rest of UPenn highlights ... -->
+            <li>Migrated Python3 Azure Functions to EC2 Elastic Beanstalk with Flask API Backend achieving significantly reduced cloud costs</li>
+            <li>Performed migration of a Flutter Application from Twitter API v2 to Twitter API v3</li>
+            <li>Led the migration of internal faculty voting application from .NET architecture to Python3 microservices using NoSQL AWS DynamoDB for a serverless datastore solution achieving low latency at any scale. Integrated SAML authentication for authorization and authentication</li>
+            <li>Created an on-premises data lake containing 7 Terabytes of Reddit comments and submissions. Implemented partition key structure for the dataset's migration to AWS S3 and Athena, supporting PhD dissertation defense and grant funding</li>
+            <li>Engineered a single-day calendar view API for an internal room request management application, utilizing MSSQL and fastAPI</li>
+            <li>Migrated purchasing acquisition system, building an admin portal with SSO login (SAML), dynamic query tools, and document management capabilities that enabled comprehensive audit tracking and version control of all requests</li>
+            <li>Collaborated closely with directors and key stakeholders to design an Employee Management System, ensuring alignment with organizational goals and stakeholder requirements</li>
+            <li>Developed research tool implementing pagination on NFS file storage spanning 10s of gigabytes of media assets from Instagram posts</li>
+            <li>Incorporated Cloudformation stack for Amazon Transcribe. Utilized Server Side Events for real time view updates Transcription workloads.</li>
             </ul>
         </div>
 
@@ -96,11 +121,21 @@
             <h3 class="company">Save Philly By Data</h3>
             <div class="role">Data Science/ Data Engineer</div>
             <div class="period">Philadelphia, PA | Jan 2023 – April 2023</div>
+            <div><a href="https://s3.us-east-1.amazonaws.com/savephillybydata.com/index.html">Save Philly by Data</a></div>
             <ul>
-                <li>Developed robust model leveraging Carto SQL for police dispatch analysis</li>
-                <li>Generate Crime maps based on 5 year interrvals across 33 different crime categories</li>
-                <li>Orchestrated dynamic visualization of 150,000+ coordinates</li>
-                <!-- ... rest of Save Philly By Data highlights ... -->
+            <li>Developed comprehensive crime analysis web application for Philadelphia utilizing real-time data processing and visualization techniques with automated monthly updates</li>
+            <li>Engineered interactive crime mapping system spanning 33 different crime categories with 5-year interval analysis capabilities using geospatial visualization libraries</li>
+            <li>Implemented advanced statistical analysis features including linear regression models, distribution plots, and seasonal decomposition algorithms for crime trend analysis</li>
+            <li>Built dynamic visualization system with multiple view options including crime maps, line plots, histograms, and two-sided graphs for comparative analysis</li>
+            <li>Created custom animation system for visualizing linear regression analysis, demonstrating crime pattern evolution over time</li>
+            <li>Developed automated data pipeline processing over 2 hours of computation time for real-time crime data updates and analysis</li>
+            <li>Implemented performance optimization using cProfile for execution analysis and runtime improvements</li>
+            <li>Designed responsive web interface using HTML5 UP framework with multiple interactive sections for different visualization types</li>
+            <li>Built additive decomposition analysis system with 30-day period analysis for enhanced trend identification</li>
+            <li>Engineered distribution plotting system with fixed bandwidth Gaussian sampling to handle zero-case scenarios in crime data</li>
+            <li>Implemented comprehensive navigation system organizing various analytical tools including crime maps, regression plots, and statistical visualizations</li>
+            <li>Developed two-sided graph system for comparative trend analysis across different crime categories and time periods</li>
+            <li>Created scalable data visualization architecture handling multiple years of Philadelphia crime data across 33 distinct categories</li>
             </ul>
         </div>
 
@@ -112,7 +147,6 @@
                 <li>Conducted NSF-funded research (grant #1851948) on video motion amplification techniques</li>
                 <li>Extended Eulerian magnification algorithms to work with 3D depth camera data</li>
                 <li>Developed novel pipeline using implicit surface representation</li>
-                <!-- ... rest of Ursinus College highlights ... -->
             </ul>
         </div>
 
@@ -189,8 +223,54 @@
                 <li>SSO</li>
                 <li>REST APIs</li>
                 <li>Microservices</li>
+                <li>Apache2</li>
+                <li>Nginx</li>
             </ul>
         </div>
+
+       <div class="skills-grid">
+       <div class="skills-card">
+           <h3>Application Layer (L7)</h3>
+           <ul>
+               <li>HTTPS</li>
+               <li>DNS</li>
+               <li>WebSocket</li>
+               <li>SMTP</li>
+               <li>FTP</li>
+           </ul>
+       </div>
+       <div class="skills-card">
+           <h3>Transport Layer (L4)</h3>
+           <ul>
+               <li>TCP</li>
+               <li>UDP</li>
+           </ul>
+       </div>
+    </div>
+
+    <div class="skills-grid">
+   <div class="skills-card">
+       <h3>Relational Databases</h3>
+       <ul>
+           <li>MySQL</li>
+           <li>MariaDB</li>
+       </ul>
+   </div>
+   <div class="skills-card">
+       <h3>NoSQL Databases</h3>
+       <ul>
+           <li>DynamoDB</li>
+           <li>MongoDB</li>
+       </ul>
+   </div>
+   <div class="skills-card">
+       <h3>Data Formats</h3>
+       <ul>
+           <li>XML</li>
+           <li>JSON</li>
+       </ul>
+   </div>
+</div>
 
         <div class="skill-card">
             <h3>Development Tools</h3>
@@ -200,8 +280,6 @@
                 <li>Vim</li>
                 <li>Tmux</li>
                 <li>VSCode</li>
-                <li>Test-Driven Development</li>
-                <li>Event-Driven Architecture</li>
             </ul>
         </div>
 
@@ -233,6 +311,1114 @@
         </div>
     </div>
 </section>
+
+<section>
+   <h2>Eulerian Video Magnification for Depth Videos</h2>
+   
+   <div style="display: flex; flex-direction: column; gap: 20px;">
+       <!-- Images/Videos Row -->
+
+
+
+           <div style="text-align: justify;">
+           <h3>Abstract</h3>
+           <p>
+ Ordinary videos capture a surprising amount of hidden, visually imperceptible information. For instance, videos of peoples' faces may capture color changes in the skin and artery motion from heartbeats, while videos of mechanical systems can capture subtle vibrations indicating imminent failure. Algorithms can extract and exaggerate these signals for visualization on top of the original videos. In particular, Eulerian magnification algorithms sidestep the need to track hidden motions directly and instead devise multiscale bandpass filters to amplify signals in local spatial regions. In this work, we extend these techniques beyond color videos to geometric video data captured by 3D depth cameras such as the Microsoft Kinect. In our framework, we can spatially amplify a "bulging of the neck" during a heartbeat or the expansion of a chest/abdomen during a breath. We then exaggerate and display these signals as evolving 3D shapes. We explore pipelines based both on implicit and parameterized surface representations, and we discuss the merits, drawbacks, and challenges of both representations compared to ordinary color videos
+           </p>
+           <p>
+               Key contributions include:
+               <ul>
+                   <li>Development of spatial amplification techniques to highlight subtle geometric changes (e.g., neck bulging during heartbeats, chest expansion during breathing)</li>
+                   <li>Implementation of both implicit and parameterized surface representation pipelines</li>
+                   <li>Comparative analysis of these representations against traditional color video approaches</li>
+                   <li>Visualization of amplified signals as evolving 3D shapes</li>
+               </ul>
+           </p>
+       </div>
+
+
+     <table border="1" style="width: 100%;">
+        Table below for Week 1: Reproduce Linear Magnification with bandpass filter. 
+        <tr>
+            <th>Original Paper</th>
+            <th>Link</th>
+            <th>results</th>
+            <th>code, authors: @tboccuto, @ctralie</th>
+        </tr>
+        <tr>
+            
+            <td>Eulerian Video Magnification for Revealing Subtle Changes in the World</td>
+            <td><a href="https://people.csail.mit.edu/mrub/papers/vidmag.pdf">Link</a></td>
+            <td>
+               <video width="400px" height="400px" controls>
+                   <source src="https://thomasmartin.boccuto.net/FaceColorAmplification.mp4" type="video/mp4">
+               </video>
+            </td>
+            
+            <td>
+                 <img src="https://thomasmartin.boccuto.net/lma-code.png" style="width: 24%; height: auto;">
+            <td>
+
+
+        </tr>
+    </table>
+
+       <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+           <img src="https://thomasmartin.boccuto.net/NSF-ursinus-reu-normals-peanut.png" style="width: 32%; height: auto;">
+           <video width="32%" controls>
+               <source src="https://thomasmartin.boccuto.net/PeanutLevelsets.mp4" type="video/mp4">
+           </video>
+           <video width="32%" controls>
+               <source src="https://thomasmartin.boccuto.net/PeanutLevelsets_Amp.mp4" type="video/mp4">
+           </video>
+       </div>
+
+
+       
+
+       <!-- Additional Visual Pipeline -->
+       <div style="display: flex; justify-content: space-between; gap: 10px;">
+           <img src="https://thomasmartin.boccuto.net/nsf-reu-signed-distance-image-presentation.png" style="width: 48%; height: auto;">
+           <img src="https://thomasmartin.boccuto.net/SVD-profiling.png" style="width: 48%; height: auto;">
+           
+       </div>
+   </div>
+</section>
+
+<section>
+    <h2>Some of my Undergraduate Computer Science Coursework @ Ursinus class of 2022</h2>
+    <h3>CS 174 Object Oriented Programming (OOP)</h3>
+    <div style="display: flex; justify-content: space-between; width: 100%;">
+   <img src="https://ursinus-cs174-s2022.github.io/CoursePage/OverviewPictures/shazam.png" style="width: 24%; height: auto;">
+   <img src="https://ursinus-cs174-f2020.github.io/CoursePage/Assignments/HW1_VirtualCities/ArtContest/tralieworld.gif" style="width: 24%; height: auto;"> 
+   <img src="https://ursinus-cs174-f2020.github.io/CoursePage/Labs/Lab4_COVIDPolymorphism/Essential.gif" style="width: 24%; height: auto;">
+   <img src="https://ursinus-cs174-s2022.github.io/CoursePage/OverviewPictures/RoadDetection.gif" style="width: 24%; height: auto;">
+</div>
+    <div style="display: flex; gap: 10px;">
+        <div style="flex: 1;">
+            <h4>Labs</h4>
+            <table border="1" style="width: 100%;">
+                <tr>
+                    <th>Lab Number</th>
+                    <th>Title</th>
+                    <th>Link</th>
+                </tr>
+                <tr>
+                    <td>Lab 1</td>
+                    <td>HTML Holidays</td>
+                    <td><a href="https://ursinus-cs174-f2020.github.io/CoursePage/Labs/Lab1_Holidays/index.html">Link</a></td>
+                </tr>
+                <tr>
+                    <td>Lab 2</td>
+                    <td>Choose Your Own Adventure</td>
+                    <td><a href="https://ursinus-cs174-f2020.github.io/CoursePage/Labs/Lab2_ChooseYourAdventure/index.html">Link</a></td>
+                </tr>
+                <tr>
+                    <td>Lab 3</td>
+                    <td>Drawing Shapes with Inheritance</td>
+                    <td><a href="https://ursinus-cs174-f2020.github.io/CoursePage/Labs/Lab3_ShapesInheritance/index.html">Link</a></td>
+                </tr>
+                <tr>
+                    <td>Lab 4</td>
+                    <td>COVID Polymorphism</td>
+                    <td><a href="https://ursinus-cs174-f2020.github.io/CoursePage/Labs/Lab4_COVIDPolymorphism/index.html">Link</a></td>
+                </tr>
+                <tr>
+                    <td>Lab 5</td>
+                    <td>Make Your Own ArrayList</td>
+                    <td><a href="https://ursinus-cs174-f2020.github.io/CoursePage/Labs/Lab5_MyArrayList/index.html">Link</a></td>
+                </tr>
+                <tr>
+                    <td>Lab 6</td>
+                    <td>Road Detection with Threads</td>
+                    <td><a href="https://ursinus-cs174-f2020.github.io/CoursePage/Labs/Lab6_RoadDetection/index.html">Link</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <div style="flex: 1;">
+            <h4>Assignments</h4>
+            <table border="1" style="width: 100%;">
+                <tr>
+                    <th>Assignment Number</th>
+                    <th>Title</th>
+                    <th>Link</th>
+                 
+                </tr>
+                <tr>
+                    <td>HW1</td>
+                    <td>Build Your Virtual City</td>
+                    <td><a href="https://ursinus-cs174-f2020.github.io/CoursePage/Assignments/HW1_VirtualCities/">Link</a></td>
+                    
+                </tr>
+                <tr>
+                    <td>HW2</td>
+                    <td>Markov Mashups with Markov Chaining</td>
+                    <td><a href="https://ursinus-cs174-f2020.github.io/CoursePage/Assignments/HW2_MarkovMashups/">Link</a></td>
+                   
+                </tr>
+                <tr>
+                    <td>HW3</td>
+                    <td>Deque Fires</td>
+                    <td><a href="https://ursinus-cs174-f2020.github.io/CoursePage/Assignments/HW3_DequeFires/">Link</a></td>
+                    
+                </tr>
+                <tr>
+                    <td>HW4</td>
+                    <td>Consonant/Vowel Filtering in Audio</td>
+                    <td><a href="https://ursinus-cs174-f2020.github.io/CoursePage/Assignments/HW4_AudioFiltering/">Link</a></td>
+                    
+                </tr>
+                <tr>
+                    <td>HW5a</td>
+                    <td>Basketball Hashing</td>
+                    <td><a href="https://ursinus-cs174-f2020.github.io/CoursePage/Assignments/HW5a_BasketballHashing/">Link</a></td>
+                   
+                </tr>
+                <tr>
+                    <td>HW5b</td>
+                    <td>Shazam</td>
+                    <td><a href="https://ursinus-cs174-f2020.github.io/CoursePage/Assignments/HW5b_Shazam/">Link</td>
+                    
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>
+<section>
+    <h2>Digital Audio Processing Coursework</h2>
+    <div style="display: flex; justify-content: space-between; width: 100%;">
+   <img src="https://ursinus-cs472a-s2021.github.io/CoursePage/OverviewPictures/Covers80_6_CSMs_SSMs.svg" style="width: 19%; height: auto;">
+   <img src="https://ursinus-cs472a-s2021.github.io/CoursePage/OverviewPictures/LetItBe_AudioNovelty.svg" style="width: 19%; height: auto;">
+   <img src="https://ursinus-cs472a-s2021.github.io/CoursePage/OverviewPictures/Karplus-strong-schematic.svg.png" style="width: 19%; height: auto;">
+   <img src="https://ursinus-cs472a-s2021.github.io/CoursePage/OverviewPictures/Convolution.gif" style="width: 19%; height: auto;">
+   <img src="https://ursinus-cs472a-s2021.github.io/CoursePage/OverviewPictures/targetZoneLabeled.svg" style="width: 19%; height: auto;">
+</div>
+    
+    <div style="display: flex; gap: 20px;">
+        <div style="flex: 1;">
+            <h3>Weekly Exercises</h3>
+            <table border="1" style="width: 100%;">
+                <tr>
+                    <th>Week</th>
+                    <th>Topic</th>
+                    <th>Link</th>
+                </tr>
+                <tr>
+                    <td>Week 1</td>
+                    <td>Audio Reverse Game</td>
+                    <td><a href="https://ursinus-cs472a-s2021.github.io/Week1_AudioReverseGame/">Link</a></td>
+                </tr>
+                <tr>
+                    <td rowspan="2">Week 2</td>
+                    <td>Beat Phase</td>
+                    <td><a href="https://ursinus-cs472a-s2021.github.io/CoursePage/ClassExercises/Week2/Week2_BeatPhase/index.html">Link</a></td>
+                </tr>
+                <tr>
+                    <td>Harmonicity</td>
+                    <td><a href="https://ursinus-cs472a-s2021.github.io/CoursePage/ClassExercises/Week2/Week2_Harmonicity/index.html">Link</a></td>
+                </tr>
+                <tr>
+                    <td rowspan="2">Week 3</td>
+                    <td>Zero Crossings And Loudness Perception</td>
+                    <td><a href="https://ursinus-cs472a-s2021.github.io/CoursePage/ClassExercises/Week3/Week3_ZCS_Loudness/index.html">Link</a></td>
+                </tr>
+                <tr>
+                    <td>Harmonics And Timbre</td>
+                    <td><a href="https://ursinus-cs472a-s2021.github.io/CoursePage/ClassExercises/Week3/Week3_Timbre/index.html">Link</a></td>
+                </tr>
+                <tr>
+                    <td rowspan="3">Week 4</td>
+                    <td>Timbral Envelopes</td>
+                    <td><a href="https://ursinus-cs472a-s2021.github.io/CoursePage/ClassExercises/Week4/Week4_Envelopes/index.html">Link</a></td>
+                </tr>
+                <tr>
+                    <td>Comb Filters</td>
+                    <td>
+                        <a href="https://ursinus-cs472a-s2021.github.io/CoursePage/ClassExercises/Week4/Week4_CombFilters/index.html">Link</a>
+                        (<a href="https://ursinus-cs472a-s2021.github.io/CoursePage/ClassExercises/Week4/Week4_CombFilters/solutions.html">Solutions</a>)
+                    </td>
+                </tr>
+                <tr>
+                    <td>The Discrete Fourier Transform</td>
+                    <td><a href="https://ursinus-cs472a-s2021.github.io/CoursePage/ClassExercises/Week4/Week4_DFT/index.html">Link</a></td>
+                </tr>
+                <tr>
+                    <td>Week 5</td>
+                    <td>Applying The DFT</td>
+                    <td><a href="https://ursinus-cs472a-s2021.github.io/CoursePage/ClassExercises/Week5/Week5_ApplyingDFT/index.html">Link</a></td>
+                </tr>
+                <tr>
+                    <td>Week 6</td>
+                    <td>Complex DFT</td>
+                    <td><a href="https://ursinus-cs472a-s2021.github.io/CoursePage/ClassExercises/Week6/ComplexDFT/index.html">Link</a></td>
+                </tr>
+                <tr>
+                    <td rowspan="2">Week 7</td>
+                    <td>DFT And Convolutions</td>
+                    <td><a href="https://ursinus-cs472a-s2021.github.io/CoursePage/ClassExercises/Week7/Week7_DFTConvolutions">Link</a></td>
+                </tr>
+                <tr>
+                    <td>STFT Noise Shaping</td>
+                    <td><a href="https://ursinus-cs472a-s2021.github.io/CoursePage/ClassExercises/Week7/Week7_STFTNoiseShaping">Link</a></td>
+                </tr>
+                <tr>
+                    <td>Week 8</td>
+                    <td>Audio Novelty Functions</td>
+                    <td><a href="https://ursinus-cs472a-s2021.github.io/CoursePage/ClassExercises/Week8/Week8_ANF">Link</a></td>
+                </tr>
+                <tr>
+                    <td>Week 9</td>
+                    <td>DTW Backtrace</td>
+                    <td><a href="https://ursinus-cs472a-s2021.github.io/CoursePage/ClassExercises/Week9/Week9_DTWBacktrace">Link</a></td>
+                </tr>
+                <tr>
+                    <td>Week 10</td>
+                    <td>Chromagrams</td>
+                    <td><a href="https://ursinus-cs472a-s2021.github.io/CoursePage/ClassExercises/Week10/Week10_Chroma">Link</a></td>
+                </tr>
+                <tr>
+                    <td>Week 11</td>
+                    <td>Shazam</td>
+                    <td><a href="https://ursinus-cs472a-s2021.github.io/CoursePage/ClassExercises/Week11/Week11_Shazam">Link</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <div style="flex: 1;">
+            <h3>Assignments</h3>
+            <table border="1" style="width: 100%;">
+                <tr>
+                    <th>Assignment</th>
+                    <th>Title</th>
+                    <th>Links</th>
+                </tr>
+                <tr>
+                    <td>HW1</td>
+                    <td>Risset Beats</td>
+                    <td>
+                        <a href="https://ursinus-cs472a-s2021.github.io/CoursePage/Assignments/HW1_RissetBeats">Assignment</a> |
+                        <a href="https://ursinus-cs472a-s2021.github.io/CoursePage/Assignments/HW1_RissetBeats/statements.html">Musical Statements</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>HW2</td>
+                    <td>Digital Instruments</td>
+                    <td>
+                        <a href="https://ursinus-cs472a-s2021.github.io/CoursePage/Assignments/HW2_DigitalInstruments">Assignment</a> |
+                        <a href="https://ursinus-cs472a-s2021.github.io/CoursePage/Assignments/HW2_DigitalInstruments/statements.html">Musical Statements</a> |
+                        <a href="https://ursinus-cs472a-s2021.github.io/CoursePage/Assignments/HW2_DigitalInstruments/statements.html#:~:text=%22For%20The%20Night%22%20Collab%2Do">My Musical Statement</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>HW3</td>
+                    <td>Vocoders And Phase Retrieval</td>
+                    <td>
+                        <a href="https://ursinus-cs472a-s2021.github.io/CoursePage/Assignments/HW3_Vocoders">Assignment</a> |
+                        <a href="https://ursinus-cs472a-s2021.github.io/CoursePage/Assignments/HW3_Vocoders/statements.html">Musical Statements</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>HW3b</td>
+                    <td>Convolution Competition</td>
+                    <td>
+                        <a href="https://ursinus-cs472a-s2021.github.io/CoursePage/Assignments/HW3b_ConvolutionCompetition">Assignment</a> |
+                        <a href="https://ursinus-cs472a-s2021.github.io/CoursePage/Assignments/HW3b_ConvolutionCompetition/statements.html">Musical Statements</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>HW5</td>
+                    <td>Audio Version Identification</td>
+                    <td><a href="https://ursinus-cs472a-s2021.github.io/CoursePage/Assignments/HW5_VersionID">Assignment</a></td>
+                </tr>
+                <tr>
+                    <td>HW6</td>
+                    <td>Let It Bee</td>
+                    <td>
+                        <a href="https://ursinus-cs472a-s2021.github.io/CoursePage/Assignments/HW6_LetItBee">Assignment</a> |
+                        <a href="https://ursinus-cs472a-s2021.github.io/CoursePage/Assignments/HW6_LetItBee/statements.html">Musical Statements</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>
+
+
+<section>
+   <h2>Theory of Computation Coursework</h2>
+   <div style="display: flex; justify-content: space-between; flex-wrap: wrap; width: 100%;">
+   <img src="https://ursinus-cs373-f2021.github.io/CoursePage/OverviewPictures/PrincetonCSBldg.png" style="width: 15%; height: auto;">
+   <img src="https://ursinus-cs373-f2021.github.io/CoursePage/OverviewPictures/HamiltonianBunny.png" style="width: 15%; height: auto;">
+   <img src="https://ursinus-cs373-f2021.github.io/CoursePage/OverviewPictures/MarioKart.png" style="width: 15%; height: auto;">
+   <img src="https://ursinus-cs373-f2021.github.io/CoursePage/FinalProject/Hamiltonian_20_9.png" style="width: 15%; height: auto;">
+   <img src="https://ursinus-cs373-f2021.github.io/CoursePage/FinalProject/Hamiltonian_20_9_solution.png" style="width: 15%; height: auto;">
+   <img src="https://ursinus-cs373-f2023.github.io/CoursePage/Assignments/HW7_Turing2/sol3step2.gif" style="width: 15%; height: auto;">
+</div>
+   <div style="display: flex; gap: 20px;">
+       <div style="flex: 1;">
+           <h3>Weekly Exercises</h3>
+           <table border="1" style="width: 100%;">
+               <tr>
+                   <th>Week</th>
+                   <th>Topic</th>
+                   <th>Link</th>
+               </tr>
+               <tr>
+                   <td rowspan="3">Week 1</td>
+                   <td>Acting Out DFAs</td>
+                   <td><a href="https://ursinus-cs373-f2023.github.io/CoursePage/ClassExercises/Week1_Unplugged">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Discrete Math Review</td>
+                   <td><a href="https://ursinus-cs373-f2023.github.io/CoursePage/ClassExercises/Week1_Discrete">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Binary And JFLAP
+                       <ul>
+                           <li><a href="https://ursinus-cs373-f2023.github.io/CoursePage/ClassExercises/Week1_FridayDFABinary/index.html#binary">Binary Drills</a></li>
+                           <li><a href="https://ursinus-cs373-f2023.github.io/CoursePage/ClassExercises/Week1_FridayDFABinary/index.html#jflap">JFLAP Exercises</a></li>
+                       </ul>
+                   </td>
+                   <td><a href="https://ursinus-cs373-f2023.github.io/CoursePage/ClassExercises/Week1_FridayDFABinary">Link</a></td>
+               </tr>
+               <tr>
+                   <td rowspan="2">Week 2</td>
+                   <td>Formal Description of DFAs, Divisibility</td>
+                   <td><a href="https://ursinus-cs373-f2023.github.io/CoursePage/ClassExercises/Week2_Formal">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Union of Regular Languages</td>
+                   <td><a href="https://ursinus-cs373-f2023.github.io/CoursePage/ClassExercises/Week2_Union">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Week 3</td>
+                   <td>NFAs, Converting NFAs To DFAs</td>
+                   <td><a href="https://ursinus-cs373-f2023.github.io/CoursePage/ClassExercises/Week3_NFAs">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Week 4</td>
+                   <td>Converting Regular Expressions To DFAs And Back</td>
+                   <td><a href="https://ursinus-cs373-f2023.github.io/CoursePage/ClassExercises/Week4_DFAToRegexp">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Week 5</td>
+                   <td>The Pumping Lemma</td>
+                   <td><a href="https://ursinus-cs373-f2023.github.io/CoursePage/ClassExercises/Week5_PumpingLemma">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Week 7/8</td>
+                   <td>Turing Machine Examples</td>
+                   <td><a href="https://ursinus-cs373-f2023.github.io/CoursePage/ClassExercises/Week7_Turing">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Week 8</td>
+                   <td>Multitape Turing Machine Examples</td>
+                   <td><a href="https://ursinus-cs373-f2023.github.io/CoursePage/ClassExercises/Week8_MultitapeTuring">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Week 10</td>
+                   <td>Decidability</td>
+                   <td><a href="https://ursinus-cs373-f2023.github.io/CoursePage/ClassExercises/Week10_Decidability">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Week 11</td>
+                   <td>Countable And Uncountable Infinities</td>
+                   <td><a href="https://ursinus-cs373-f2023.github.io/CoursePage/ClassExercises/Week11_Infinities">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Week 12</td>
+                   <td>Undecidability</td>
+                   <td><a href="https://ursinus-cs373-f2023.github.io/CoursePage/ClassExercises/Week12_Undecidability">Link</a></td>
+               </tr>
+           </table>
+       </div>
+
+       <div style="flex: 1;">
+           <h3>Assignments</h3>
+           <table border="1" style="width: 100%;">
+               <tr>
+                   <th>Assignment</th>
+                   <th>Title</th>
+                   <th>Link</th>
+               </tr>
+               <tr>
+                   <td>HW1</td>
+                   <td>Discrete Math Practice</td>
+                   <td><a href="https://ursinus-cs373-f2023.github.io/CoursePage/Assignments/HW1_Discrete/index.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td>HW2</td>
+                   <td>DFAs</td>
+                   <td><a href="https://ursinus-cs373-f2023.github.io/CoursePage/Assignments/HW2_DFA/index.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td>HW3</td>
+                   <td>DFAs And NFAs</td>
+                   <td><a href="https://ursinus-cs373-f2023.github.io/CoursePage/Assignments/HW3_NFA/index.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td>HW4</td>
+                   <td>(Non)Regular Languages And Regular Expressions</td>
+                   <td><a href="https://ursinus-cs373-f2023.github.io/CoursePage/Assignments/HW4_Regexp/index.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td>HW5</td>
+                   <td>Context Free Grammars</td>
+                   <td><a href="https://ursinus-cs373-f2023.github.io/CoursePage/Assignments/HW5_CFGs/index.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td>HW6</td>
+                   <td>Pushdown Automata</td>
+                   <td><a href="https://ursinus-cs373-f2023.github.io/CoursePage/Assignments/HW6_PDAs/index.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td>HW7</td>
+                   <td>Turing Machines</td>
+                   <td><a href="https://ursinus-cs373-f2023.github.io/CoursePage/Assignments/HW7_Turing/index.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td>HW8</td>
+                   <td>Turing Machines Part 2</td>
+                   <td><a href="https://ursinus-cs373-f2023.github.io/CoursePage/Assignments/HW8_Turing2/index.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td>HW9</td>
+                   <td>Decidability</td>
+                   <td><a href="https://ursinus-cs373-f2023.github.io/CoursePage/Assignments/HW9_Decidability/index.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td>HW10</td>
+                   <td>Undecidability And Uncomputability</td>
+                   <td><a href="https://ursinus-cs373-f2023.github.io/CoursePage/Assignments/HW10_Undecidability_Uncomputability/index.html">Link</a></td>
+               </tr>
+               <tr>
+                <td> Final Project </td>
+                <td>Final Project: Solving NP Complete Problems with Cook-Levin Theorem</td>
+                <td><a href="https://ursinus-cs373-f2023.github.io/CoursePage/FinalProject/index.html">Link</a></td>
+               </tr>
+           </table>
+       </div>
+   </div>
+</section>
+
+
+<section>
+   <h2>Artificial Intelligence Coursework</h2>
+      <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; width: 100%;">
+   <img src="https://ursinus-cs477-f2021.github.io/CoursePage/OverviewPictures/rushhour.png" style="width: 18%; height: auto; margin-bottom: 10px;">
+   <img src="https://ursinus-cs477-f2021.github.io/CoursePage/OverviewPictures/MnistExamples.png" style="width: 18%; height: auto; margin-bottom: 10px;">
+   <img src="https://ursinus-cs477-f2021.github.io/CoursePage/OverviewPictures/20newsgroups_hellinger_tfidf.png" style="width: 18%; height: auto; margin-bottom: 10px;">
+   <img src="https://ursinus-cs477-f2021.github.io/CoursePage/Assignments/HW3_Markov/Example1_Loop.png" style="width: 18%; height: auto; margin-bottom: 10px;">
+   <img src="https://ursinus-cs477-f2021.github.io/CoursePage/Assignments/HW7_DeepLearning/GANCartoon.svg" style="width: 18%; height: auto; margin-bottom: 10px;">
+</div>
+   <div style="display: flex; gap: 20px;">
+       <div style="flex: 1;">
+           <h3>Weekly Exercises</h3>
+           <table border="1" style="width: 100%;">
+               <tr>
+                   <th>Week</th>
+                   <th>Topic</th>
+                   <th>Link</th>
+               </tr>
+               <tr>
+                   <td rowspan="3">Week 1</td>
+                   <td>What Is AI?</td>
+                   <td><a href="https://ursinus-cs477-f2021.github.io/CoursePage/ClassExercises/Week1_WhatIsAI">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Choose Your Own Adventure
+                       <div><a href="https://ursinus-cs477-f2021.github.io/CoursePage/ClassExercises/Week1_Adventure/index.html#student">- Student Adventures</a></div>
+                   </td>
+                   <td><a href="https://ursinus-cs477-f2021.github.io/CoursePage/ClassExercises/Week1_Adventure">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Monte Carlo COVID Simulation
+                       <div><a href="https://ursinus-cs477-f2021.github.io/CoursePage/ClassExercises/Week1_COVID/solution.html">- Solution</a></div>
+                   </td>
+                   <td><a href="https://ursinus-cs477-f2021.github.io/CoursePage/ClassExercises/Week1_COVID">Link</a></td>
+               </tr>
+               <tr>
+                   <td rowspan="2">Week 2</td>
+                   <td>Blind Maze Searching</td>
+                   <td><a href="https://ursinus-cs477-f2021.github.io/CoursePage/ClassExercises/Week2_BasicSearch">Link</a></td>
+               </tr>
+               <tr>
+                   <td>8 Puzzle</td>
+                   <td><a href="https://ursinus-cs477-f2021.github.io/CoursePage/ClassExercises/Week2_8Puzzle">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Week 3</td>
+                   <td>Uniform Cost, Greedy Best-First, and A* Search</td>
+                   <td><a href="https://ursinus-cs477-f2021.github.io/CoursePage/ClassExercises/Week3_PrioritySearch">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Week 4</td>
+                   <td>Markov Chains of Characters</td>
+                   <td><a href="https://ursinus-cs477-f2021.github.io/CoursePage/ClassExercises/Week4_Markov">Link</a></td>
+               </tr>
+               <tr>
+                   <td rowspan="2">Week 5</td>
+                   <td>Probability Module</td>
+                   <td><a href="https://ursinus-cs477-f2021.github.io/Modules/Module2/Video1">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Bag of Words Exercise / Theory of Bayesian Classifiers
+                       <div><a href="https://ursinus-cs477-f2021.github.io/CoursePage/ClassExercises/Week5_BagOfWords#exercise">- Text Classification Exercise</a></div>
+                       <div><a href="https://ursinus-cs477-f2021.github.io/CoursePage/ClassExercises/Week5_BagOfWords#theory">- Naive Bayes Theory</a></div>
+                   </td>
+                   <td><a href="https://ursinus-cs477-f2021.github.io/CoursePage/ClassExercises/Week5_BagOfWords">Link</a></td>
+               </tr>
+               <tr>
+                   <td rowspan="2">Week 6</td>
+                   <td>Gaussian Naive Bayes And Grad School Admissions</td>
+                   <td><a href="https://ursinus-cs477-f2021.github.io/CoursePage/ClassExercises/Week6_GradSchoolAdmissions">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Hidden Markov Models / Bayes Filtering / Viterbi Notes</td>
+                   <td><a href="https://ursinus-cs477-f2021.github.io/CoursePage/ClassExercises/Week6_HMM">Link</a></td>
+               </tr>
+               <tr>
+                   <td rowspan="2">Week 7</td>
+                   <td>Euclidean Vectors / Data Vectorization Module</td>
+                   <td><a href="https://ursinus-cs477-f2021.github.io/Modules/VectorModule/Video1">Link</a></td>
+               </tr>
+               <tr>
+                   <td>K-Nearest Neighbors And Digits Classification</td>
+                   <td><a href="https://ursinus-cs477-f2021.github.io/CoursePage/ClassExercises/Week7_DigitsNN.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td rowspan="2">Week 8</td>
+                   <td>Matrix Module</td>
+                   <td><a href="https://ursinus-cs477-f2021.github.io/Modules/MatrixModule/Video1">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Nonnegative Matrix Factorization</td>
+                   <td><a href="https://ursinus-cs477-f2021.github.io/CoursePage/ClassExercises/Week8_NMF">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Week 9/10</td>
+                   <td>KMeans Clustering, Applications To Image Processing</td>
+                   <td><a href="https://ursinus-cs477-f2021.github.io/CoursePage/ClassExercises/Week9_KMeans3DShapes">Link</a></td>
+               </tr>
+               <tr>
+                   <td rowspan="2">Week 10/11</td>
+                   <td>Visual Bag of Words</td>
+                   <td><a href="https://ursinus-cs477-f2021.github.io/CoursePage/ClassExercises/Week10_VisualBOW/index.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Logistic Regression And Gradient Descent</td>
+                   <td><a href="https://ursinus-cs477-f2021.github.io/CoursePage/ClassExercises/Week10_LogisticRegression/index.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td rowspan="2">Week 14</td>
+                   <td>Cat Image Autoencoder</td>
+                   <td><a href="https://github.com/Ursinus-CS477-F2021/Week14_CatDog_Layers/blob/main/Cats_Autoencoder.ipynb">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Cat or Dog Deep Convolutional Network</td>
+                   <td><a href="https://github.com/Ursinus-CS477-F2021/Week14_CatDog_Layers/blob/main/CatDog_Train.ipynb">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Week 15</td>
+                   <td>Voting on Ethical Problems in AI</td>
+                   <td><a href="https://www.mentimeter.com/s/7b18896eb400c41af4df2f9af7455aea/3fa179087276">Link</a></td>
+               </tr>
+           </table>
+       </div>
+
+       <div style="flex: 1;">
+           <h3>Assignments</h3>
+           <table border="1" style="width: 100%;">
+               <tr>
+                   <th>Assignment</th>
+                   <th>Title</th>
+                   <th>Link</th>
+               </tr>
+               <tr>
+                   <td>HW0</td>
+                   <td>Python Self Study Module</td>
+                   <td><a href="https://ursinus-cs477-f2021.github.io/Modules/Module1/Video1">Link</a></td>
+               </tr>
+               <tr>
+                   <td>HW1</td>
+                   <td>Welcome To CS 477</td>
+                   <td><a href="https://ursinus-cs477-f2021.github.io/CoursePage/Assignments/HW1_WelcomeToCS477">Link</a></td>
+               </tr>
+               <tr>
+                   <td>HW2</td>
+                   <td>The Rush Hour Problem
+                       <div><a href="https://ursinus-cs477-f2021.github.io/CoursePage/Assignments/HW2_RushHour/competition.html">- Competition Results</a></div>
+                   </td>
+                   <td><a href="https://ursinus-cs477-f2021.github.io/CoursePage/Assignments/HW2_RushHour">Link</a></td>
+               </tr>
+               <tr>
+                   <td>HW3</td>
+                   <td>Markov Chains for Text Processing</td>
+                   <td><a href="https://ursinus-cs477-f2021.github.io/CoursePage/Assignments/HW3_Markov">Link</a></td>
+               </tr>
+               <tr>
+                   <td>HW4</td>
+                   <td>Bayesian Robot Localization</td>
+                   <td><a href="https://ursinus-cs477-f2021.github.io/CoursePage/Assignments/HW4_RobotLocalization">Link</a></td>
+               </tr>
+               <tr>
+                   <td>HW5a</td>
+                   <td>3D Shape Clustering</td>
+                   <td><a href="https://ursinus-cs477-f2021.github.io/CoursePage/Assignments/HW5a_3DShapeCluster">Link</a></td>
+               </tr>
+               <tr>
+                   <td>HW5b</td>
+                   <td>NMF for Music Component Separation</td>
+                   <td><a href="https://ursinus-cs477-f2021.github.io/CoursePage/Assignments/HW5b_Unsupervised">Link</a></td>
+               </tr>
+               <tr>
+                   <td>HW6</td>
+                   <td>Logistic Regression on Movie Reviews</td>
+                   <td><a href="https://ursinus-cs477-f2021.github.io/CoursePage/Assignments/HW6_LogisticRegression">Link</a></td>
+               </tr>
+               <tr>
+                   <td>HW7</td>
+                   <td>(Deep) Neural Networks on Images</td>
+                   <td><a href="https://ursinus-cs477-f2021.github.io/CoursePage/Assignments/HW7_DeepLearning">Link</a></td>
+               </tr>
+           </table>
+       </div>
+   </div>
+</section>
+
+
+<section>
+   <h2>Data Structures & Algorithms Coursework</h2>
+   <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; width: 100%;">
+   <img src="https://ursinus-cs371-s2022.github.io/CoursePage/OverviewPictures/C7.gif" style="width: 23%; height: auto; margin-bottom: 10px;">
+   <img src="https://ursinus-cs371-s2022.github.io/CoursePage/OverviewPictures/linmdtw.png" style="width: 23%; height: auto; margin-bottom: 10px;">
+   <img src="https://ursinus-cs371-s2022.github.io/CoursePage/OverviewPictures/plantcell.png" style="width: 23%; height: auto; margin-bottom: 10px;">
+   <img src="https://ursinus-cs371-s2022.github.io/CoursePage/OverviewPictures/bitonicsort.png" style="width: 23%; height: auto; margin-bottom: 10px;">
+   <img src="https://ursinus-cs371-s2022.github.io/CoursePage/OverviewPictures/PeyreFMM.png" style="width: 23%; height: auto; margin-bottom: 10px;">
+   <img src="https://ursinus-cs371-s2022.github.io/CoursePage/Assignments/HW3_SeamCarving/Energy.png" style="width: 23%; height: auto; margin-bottom: 10px;">
+   <img src="https://ursinus-cs371-s2022.github.io/CoursePage/Assignments/HW3_SeamCarving/HandStand_SeamCarve.gif" style="width: 23%; height: auto; margin-bottom: 10px;">
+   <img src="https://ursinus-cs371-s2022.github.io/CoursePage/Assignments/HW6_TSPArt/ArtContest/Moby.png" style="width: 23%; height: auto; margin-bottom: 10px;">
+</div>
+   <div style="display: flex; gap: 20px;">
+       <div style="flex: 2;">
+           <h3>Weekly Exercises</h3>
+           <table border="1" style="width: 100%;">
+               <tr>
+                   <th>Week</th>
+                   <th>Topic</th>
+                   <th>Link</th>
+               </tr>
+               <tr>
+                   <td rowspan="2">Week 1</td>
+                   <td>Python Self Study Modules</td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/Modules/Module1/Video1">Link</a></td>
+               </tr>
+               <tr>
+                   <td>A CS Definition of The Log Function</td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/CoursePage/ClassExercises/Week1_CSLog">Link</a></td>
+               </tr>
+               <tr>
+                   <td rowspan="3">Week 2</td>
+                   <td>Needle in A Haystack / Intro To Hashing</td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/CoursePage/ClassExercises/Week2_Needle">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Harry Potter Hashing</td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/CoursePage/ClassExercises/AlgorithmsDemos/Hashing/Hashing.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Black Box Sorting in Python</td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/CoursePage/ClassExercises/Week2_Sorting">Link</a></td>
+               </tr>
+               <tr>
+                   <td rowspan="2">Week 3</td>
+                   <td>Big-O Self Study Quiz</td>
+                   <td><a href="https://ursinus.instructure.com/courses/13782/quizzes/18024">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Big-O Exercises</td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/CoursePage/ClassExercises/Week3_BigO">Link</a></td>
+               </tr>
+               <tr>
+                   <td rowspan="2">Week 4</td>
+                   <td>Discovering Disjoint Set Data Structures</td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/CoursePage/ClassExercises/Week4_DiscoveringUnionFind">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Disjoint Sets / Union Find Module</td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/Modules/UnionFindModule/Video1">Link</a></td>
+               </tr>
+               <tr>
+                   <td rowspan="3">Week 5</td>
+                   <td>Recursion Module</td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/Modules/RecursionModule/Video1">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Edit Distance Module</td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/Modules/EditDistanceModule/Video1">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Edit Distance And Backtracing</td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/CoursePage/ClassExercises/Week5_EditBacktracing">Link</a></td>
+               </tr>
+               <tr>
+                   <td rowspan="2">Week 6</td>
+                   <td>Dynamic Time Warping Notes</td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/CoursePage/ClassExercises/DTWNotes">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Backtracing / Making Change</td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/Modules/MakingChange/Video0">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Week 7</td>
+                   <td>Greedy Time Warping Pitfalls</td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/CoursePage/ClassExercises/Week7_GreedyDTW">Link</a></td>
+               </tr>
+               <tr>
+                   <td rowspan="2">Week 8</td>
+                   <td>Sorting Basics Module</td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/Modules/BasicSortingModule/Video1">Link</a></td>
+               </tr>
+               <tr>
+                   <td>The Kendall Tau Distance between Two Rankings</td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/CoursePage/ClassExercises/Week8_KendallTau">Link</a></td>
+               </tr>
+               <tr>
+                   <td rowspan="2">Week 9</td>
+                   <td>Radix Sort</td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/CoursePage/ClassExercises/Week9_RadixSort">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Radix Sort / Fisher Yates Module</td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/Modules/RadixFisherYates/Video1">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Week 10</td>
+                   <td>Binary Trees Module</td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/Modules/TreesModule/Video1">Link</a></td>
+               </tr>
+               <tr>
+                   <td rowspan="2">Week 11</td>
+                   <td>Minimum Spanning Trees And Kruskal's Algorithm</td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/Modules/KruskalNotes/Video1">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Phyolgenetic Trees, Needleman-Wunsch, And Single-Linkage Clustering</td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/CoursePage/ClassExercises/Week11_Phylogenetic">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Week 12/13</td>
+                   <td>Huffman Trees Module</td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/Modules/HuffmanTrees/Video1">Link</a></td>
+               </tr>
+           </table>
+       </div>
+
+       <div style="flex: 1;">
+           <h3>Labs</h3>
+           <table border="1" style="width: 100%;">
+               <tr>
+                   <th>Lab</th>
+                   <th>Title</th>
+                   <th>Link</th>
+               </tr>
+               <tr>
+                   <td>Lab 1</td>
+                   <td>Binary Search</td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/CoursePage/Labs/Lab1_BinarySearch/index.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Lab 2</td>
+                   <td>Union Find</td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/CoursePage/Labs/Lab2_UnionFind/index.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Lab 3</td>
+                   <td>Towers of Hanoi</td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/CoursePage/Labs/Lab3_Towers/index.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Lab 4</td>
+                   <td>Dynamic Time Warping</td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/CoursePage/Labs/Lab4_DTW/index.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Lab 5</td>
+                   <td>Merge Sort And Brute Force Kendall-Tau</td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/CoursePage/Labs/Lab5_MergeSort/index.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Lab 6</td>
+                   <td>Tree Node Removal</td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/CoursePage/Labs/Lab6_TreeRemoval/index.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Lab 7</td>
+                   <td>AVL Trees</td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/CoursePage/Labs/Lab7_AVL/index.html">Link</a></td>
+               </tr>
+           </table>
+
+           <h3>Assignments</h3>
+           <table border="1" style="width: 100%;">
+               <tr>
+                   <th>Assignment</th>
+                   <th>Title</th>
+                   <th>Link</th>
+               </tr>
+               <tr>
+                   <td>HW1</td>
+                   <td>Autocomplete And Spell Check</td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/CoursePage/Assignments/HW1_Autocomplete/index.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td>HW2</td>
+                   <td>Plant Cell Segmentation</td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/CoursePage/Assignments/HW2_PlantCellSegmentation/index.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td>HW3a</td>
+                   <td>Warping Paths And Delannoy Numbers</td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/CoursePage/Assignments/HW3a_WarpingPaths/index.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td>HW3b</td>
+                   <td>Seam Carving</td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/CoursePage/Assignments/HW3_SeamCarving/index.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td>HW4</td>
+                   <td>Fair Elections of Animals</td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/CoursePage/Assignments/HW4_FairElections/index.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td>HW5</td>
+                   <td>Phyolgenetic Trees</td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/CoursePage/Assignments/HW5_PhylogeneticTrees/index.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td>HW6</td>
+                   <td>Traveling Salesperson Art
+                       <div><a href="https://ursinus-cs371-s2022.github.io/CoursePage/Assignments/HW6_TSPArt/artcontest.html">- Art Contest</a></div>
+                   </td>
+                   <td><a href="https://ursinus-cs371-s2022.github.io/CoursePage/Assignments/HW6_TSPArt/index.html">Link</a></td>
+               </tr>
+           </table>
+       </div>
+   </div>
+</section>
+
+<section>
+   <h2>Computer Graphics Coursework</h2>
+<div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; width: 100%;">
+   <img src="https://ursinus-cs476-f2022.github.io/CoursePage/OverviewPictures/homerwave.gif" style="width: 18%; height: auto; margin-bottom: 10px;">
+   <img src="https://ursinus-cs476-f2022.github.io/CoursePage/Assignments/HW2_SceneTrees/ArtContest/tom-dinos.png" style="width: 18%; height: auto; margin-bottom: 10px;"> 
+   <img src="https://ursinus-cs476-f2022.github.io/CoursePage/Assignments/HW2_SceneTrees/DinoDanceCircle.gif" style="width: 18%; height: auto; margin-bottom: 10px;">
+   <img src="https://ursinus-cs476-f2022.github.io/CoursePage/Assignments/HW3_CharacterAnimation/Images/homerWave.gif" style="width: 18%; height: auto; margin-bottom: 10px;">
+   <img src="https://ursinus-cs476-f2022.github.io/CoursePage/Assignments/HW6_RayTracer/Refraction.gif" style="width: 18%; height: auto; margin-bottom: 10px;">
+</div>
+   <div style="display: flex; gap: 20px;">
+       <div style="flex: 1;">
+           <h3>Weekly Exercises</h3>
+           <table border="1" style="width: 100%;">
+               <tr>
+                   <th>Week</th>
+                   <th>Topic</th>
+                   <th>Link</th>
+               </tr>
+               <tr>
+                   <td rowspan="4">Week 1</td>
+                   <td>Javascript Module</td>
+                   <td><a href="https://ursinus-cs476-f2022.github.io/Modules/Week1/Javascript1">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Vector Basics And Dot Product Module</td>
+                   <td><a href="https://ursinus-cs476-f2022.github.io/Modules/Week1/Vectors1">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Class Notes on Euclidean Vectors</td>
+                   <td><a href="Lectures/2_VectorsIntro/index.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Julia Sets Exercise</td>
+                   <td><a href="ClassExercises/Week1_JuliaSets/index.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td rowspan="2">Week 2</td>
+                   <td>Barycentric Etch-A-Sketch</td>
+                   <td><a href="Materials/BarycentricExploration/WeightedAverage.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Lines And Planes Module</td>
+                   <td><a href="https://ursinus-cs476-f2022.github.io/Modules/LinesAndPlanes/Video1">Link</a></td>
+               </tr>
+               <tr>
+                   <td rowspan="2">Week 3</td>
+                   <td>Ray Intersection Notes</td>
+                   <td><a href="ClassExercises/Week3_RayIntersections/index.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Matrix Multiplications And Compositions Widget</td>
+                   <td><a href="Materials/ggslac/viewers/MatrixAnim.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td rowspan="2">Week 4</td>
+                   <td>3D Transformations And Scenes Module</td>
+                   <td><a href="https://ursinus-cs476-f2022.github.io/Modules/Scenes/Video1">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Forward Kinematics Demo</td>
+                   <td><a href="Assignments/HW3_CharacterAnimation/HW3_CharacterAnimation/forward.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Week 8</td>
+                   <td>Orientation Module</td>
+                   <td><a href="https://ursinus-cs476-f2022.github.io/Modules/OrientationModule/Video">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Week 9</td>
+                   <td>Curve Subdivision</td>
+                   <td><a href="../CurveSubdivision">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Week 10</td>
+                   <td>Heightmaps And Levelsets Module</td>
+                   <td><a href="https://ursinus-cs476-f2022.github.io/Modules/Levelset/Video1">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Week 11</td>
+                   <td>Image Processing Exercises</td>
+                   <td><a href="ClassExercises/Week11_EmbossMedian/index.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td rowspan="2">Week 12</td>
+                   <td>Ray Casting Module</td>
+                   <td><a href="https://ursinus-cs476-f2022.github.io/Modules/RayCasting/Video1">Link</a></td>
+               </tr>
+               <tr>
+                   <td>Lambertian and Blinn-Phong Shading Class Exercises</td>
+                   <td><a href="https://ursinus-cs476-f2022.github.io/Modules/Lighting/Lambertian">Link</a></td>
+               </tr>
+           </table>
+       </div>
+
+       <div style="flex: 1;">
+           <h3>Assignments</h3>
+           <table border="1" style="width: 100%;">
+               <tr>
+                   <th>Assignment</th>
+                   <th>Title</th>
+                   <th>Links</th>
+               </tr>
+               <tr>
+                   <td>HW1</td>
+                   <td>Geometric Primitives</td>
+                   <td><a href="https://ursinus-cs476-f2022.github.io/CoursePageAssignments/HW1_GeomPrimitives/index.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td>HW2</td>
+                   <td>Scene Trees
+                       <div><a href="https://ursinus-cs476-f2022.github.io/CoursePageAssignments/HW2_SceneTrees/ArtContest/index.html">- Art Contest</a></div>
+                   </td>
+                   <td><a href="https://ursinus-cs476-f2022.github.io/CoursePage/Assignments/HW2_SceneTrees/index.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td>HW3a</td>
+                   <td>Euler Angles</td>
+                   <td><a href="https://ursinus-cs476-f2022.github.io/CoursePage/Assignments/HW3a_EulerAngles/index.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td>HW3</td>
+                   <td>Character Animation</td>
+                   <td><a href="https://ursinus-cs476-f2022.github.io/CoursePage/Assignments/HW3_CharacterAnimation/index.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td>HW4</td>
+                   <td>Polygon Mesh Processing
+                       <div><a href="https://ursinus-cs476-f2022.github.io/CoursePage/Assignments/HW4_PolygonMeshProcessing/ArtContest/index.html">- Art Contest</a></div>
+                   </td>
+                   <td><a href="https://ursinus-cs476-f2022.github.io/CoursePage/Assignments/HW4_PolygonMeshProcessing/index.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td>HW5</td>
+                   <td>Shaders And Image Processing
+                       <div><a href="https://ursinus-cs476-f2022.github.io/CoursePage/Assignments/HW5_Shaders/ArtContest/index.html">- Art Contest</a></div>
+                   </td>
+                   <td><a href="https://ursinus-cs476-f2022.github.io/CoursePage/Assignments/HW5_Shaders/index.html">Link</a></td>
+               </tr>
+               <tr>
+                   <td>HW6</td>
+                   <td>Real Time Ray Tracing
+                       <div><a href="https://ursinus-cs476-f2022.github.io/CoursePage/Assignments/HW6_RayTracer/ArtContest/index.html">- Art Contest</a></div>
+                   </td>
+                   <td><a href="https://ursinus-cs476-f2022.github.io/CoursePage/Assignments/HW6_RayTracer/index.html">Link</a></td>
+               </tr>
+           </table>
+       </div>
+   </div>
+</section>
+
+<section>
+   <h2>Some Fun Proof Writing</h2>
+   <table border="1" style="width: 100%;">
+       <tr>
+           <th>Assignment</th>
+           <th>PDF Link</th>
+       </tr>
+       <tr>
+           <td>Section 1.3 Proofs</td>
+           <td>
+               <a href="https://thomasmartin.boccuto.net/Math_236W__Section_1_3_Homework_FinalDraft.pdf" target="_blank" style="text-decoration: none;">
+                   <div style="display: flex; align-items: center; gap: 10px;">
+                       <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg" style="width: 20px; height: auto;">
+                       <span>View PDF</span>
+                   </div>
+               </a>
+           </td>
+       </tr>
+       <tr>
+           <td>Section 4.1 Proofs</td>
+           <td>
+               <a href="https://thomasmartin.boccuto.net/Math_236W__Section_4_1_Homework.pdf" target="_blank" style="text-decoration: none;">
+                   <div style="display: flex; align-items: center; gap: 10px;">
+                       <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg" style="width: 20px; height: auto;">
+                       <span>View PDF</span>
+                   </div>
+               </a>
+           </td>
+       </tr>
+   </table>
+</section>
+
+<section>
+    <h2>Course: CS 174 - Object Oriented and Systems Programming</h2>
+    <table border="1" style="width: 100%;">
+        <tr>
+            <td><strong>Course Website:</strong></td>
+            <td><a href="https://ursinus-cs174-s2022.github.io/CoursePage/">Spring 2022 Course Page</a></td>
+        </tr>
+        <tr>
+            <td><strong>Role:</strong></td>
+            <td>Teaching Assistant</td>
+        </tr>
+        <tr>
+            <td><strong>Responsibilities:</strong></td>
+            <td>
+                - Office Hours: Monday/Wednesday 4:30PM - 5:30PM<br>
+                - Discord Support<br>
+                - Lab & Assignment Assistance<br>
+                - Coordinated with Professor's Office Hours for extended student support
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Course Focus:</strong></td>
+            <td>Systems Programming and Object-Oriented Programming in C++</td>
+        </tr>
+    </table>
+</section>
+
 
 <section class="reinvent-section">
     <div class="reinvent-header">
