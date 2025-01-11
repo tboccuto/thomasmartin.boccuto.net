@@ -2,10 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
     <style type="text/css">
-        body {
-        font-family: 'Lucida Console', monospace;
-        }
+    body {font-family: 'Lucida Console', monospace;} .reinvent-section {padding: 2rem 0; margin: 2rem auto; max-width: 1200px;} .reinvent-header {text-align: center; margin-bottom: 2rem;} .reinvent-header h2 {font-size: 2.5rem; margin-bottom: 1rem; color: #333;} .reinvent-header p {font-size: 1.2rem; color: #666; max-width: 800px; margin: 0 auto;} .media-grid {display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 2rem 0;} .media-item {position: relative; border-radius: 8px; overflow: hidden; aspect-ratio: 1; transition: transform 0.3s ease;} .media-item:hover {transform: scale(1.05);} .media-item img {width: 100%; height: 100%; object-fit: cover;} .media-item.video {grid-column: span 2; grid-row: span 2;} .media-item video {width: 100%; height: 100%; object-fit: cover;} @media (max-width: 768px) { .media-grid {grid-template-columns: repeat(2, 1fr);}} @media (max-width: 480px) { .media-grid {grid-template-columns: 1fr;} .media-item.video {grid-column: auto; grid-row: auto;}}
+
+    .skills-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;} .skill-card ul {list-style: none; padding: 0;} .cloud-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px;} @media (max-width: 768px) { .skills-grid { grid-template-columns: 1fr; } }
+
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -23,7 +26,7 @@
                     <h1 class="hero-title">Thomas M. Boccuto</h1>
                     <p class="hero-subtitle">Software Engineer</p>
                     <div class="hero-summary">
-                        <p>Hi welcome to my professional page. I am a software engineer sitting out of the Philadelphia area. Along with software, I like working out, fishing, beach trips or spending time with my family and friends. Please Write me an email if you would to connect.</p>
+                        <p>Hi welcome to my professional page. I am a software engineer sitting out of the Philadelphia area. Along with software, I like working out, fishing, beach trips or spending time with my family and friends. Please write me an email if you would to connect.</p>
                         <div class="hero-links">
                             <a href="mailto:tom@peeps.sh" class="hero-link">
                                 <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -47,6 +50,8 @@
                             </a>
                         </div>
                     </div>
+
+                    </div>
                 </div>
             </div>
             
@@ -58,40 +63,20 @@
                 <div class="chevron"></div>
             </div>
         </header>
+        <h2> Education </h2>
+        <div class="company"> Ursinus College</div>
+        <div class="role"> Bachelors Degree Computer Science</div>
             <h2>Experience</h2>
     <div class="experiences">
         <div>
             <h3 class="company">peepnest.com</h3>
-
             <div class="role">Founder and Lead Software Engineer</div>
             <div class="period">Philadelphia, PA | June 2024 – Present</div>
             <ul>
-                <li>Developed Flask REST API with JWT authentication and session management</li>
-                <li>Implemented real-time chat using Flask-SocketIO with room-based messaging</li>
-                <li>Built notification system supporting multiple event types with real-time updates</li>
-                <li>Created geospatial discovery system using Haversine formula for location filtering</li>
-                <li>Integrated AWS S3 and CloudFront for media storage and delivery</li>
-                <li>Designed SQLAlchemy ORM schema with 12+ models and optimized queries</li>
-                <li>Implemented authentication with JWT, refresh tokens, and CSRF protection</li>
-                <li>Created RESTful endpoints with websocket communication</li>
-                <li>Optimized performance with Flask-Caching and efficient pagination</li>
-                <li>Integrated Twilio for OTP verification with error handling</li>
-                <li>Deployed AWS infrastructure using Terraform with multi-AZ configuration</li>
-                <li>Built microservices using AWS ECS Fargate for React and Flask applications</li>
-                <li>Configured IAM roles and security groups for least-privilege access</li>
-                <li>Set up ALB with HTTPS termination and automated certificate management</li>
-                <li>Implemented CloudWatch monitoring with metric alarms and logging</li>
-                <li>Designed data storage using RDS MySQL and S3 with CloudFront CDN</li>
-                <li>Configured networking with public subnets and high-availability zones</li>
-                <li>Set up automated database backups and security controls</li>
-                <li>Implemented zero-downtime deployments with ECR and Fargate</li>
-                <li>Created CloudWatch alarms for resource utilization and scaling</li>
-                <li>Established CI/CD pipeline using GitHub Actions</li>
-                <li>Developed selective deployment system based on file changes</li>
-                <li>Automated ECS deployments with ECR image management</li>
-                <li>Implemented deployment stability checks and credential management</li>
-                <li>Created parallel deployment workflows with comprehensive configuration</li>
-                <li>Designed containerized deployment using Docker for microservices</li>
+                <li>Engineered a robust Flask-based REST API backend with JWT authentication, handling user sessions, and managing secure access control through custom token validation middleware</li>
+                <li>Implemented real-time messaging functionality using Flask-SocketIO, enabling instant chat features with room-based communication and typing indicators</li>
+                <li>Designed and integrated a comprehensive notification system supporting multiple notification types (likes, comments, replies) with real-time updates</li>
+                <!-- ... rest of peepnest.com highlights ... -->
             </ul>
         </div>
 
@@ -100,15 +85,10 @@
             <div class="role">DevOps Engineer</div>
             <div class="period">Philadelphia, PA | April 2023 – Present</div>
             <ul>
-                <li>Migrated Azure Functions to EC2 Elastic Beanstalk with Flask API</li>
-                <li>Updated Flutter application for Twitter API v3 compatibility</li>
-                <li>Converted .NET voting system to Python microservices with DynamoDB</li>
-                <li>Built 7TB data lake for Reddit data with AWS S3 and Athena partitioned across year and month</li>
-                <li>Developed calendar API using MSSQL and FastAPI</li>
-                <li>Implemented SSO-enabled admin portal with document management and audit tracking</li>
-                <li>Designed Employee Management System aligned with organizational requirements</li>
-                <li>Created paginated research tool for large-scale NFS media storage</li>
-                <li>Deployed CloudFormation stack with real-time transcription updates</li>
+                <li>Migrated Python3 Azure Functions to EC2 Elastic Beanstalk with Flask API Backend achieving significantly reduced cloud costs</li>
+                <li>Performed migration of a Flutter Application from Twitter API v2 to Twitter API v3</li>
+                <li>Migrated internal faculty voting application from .NET architecture to Python3 microservices and completing lift in shift to cloud.</li>
+                <!-- ... rest of UPenn highlights ... -->
             </ul>
         </div>
 
@@ -159,97 +139,253 @@
         </div>
     </div>
 
-    <h1>Skills & Expertise</h1>
+<section>
+    <h2>Skills</h2>
+    <div class="skills-grid">
+        <div class="skill-card">
+            <h3>Languages & Core</h3>
+            <ul>
+                <li>Python3</li>
+                <li>JavaScript</li>
+                <li>Golang</li>
+                <li>Swift</li>
+                <li>SQL</li>
+                <li>Bash</li>
+                <li>HCL</li>
+            </ul>
+        </div>
+
+        <div class="skill-card">
+            <h3>Cloud & Infrastructure</h3>
+            <ul class="cloud-grid">
+                <li>AWS IAM</li>
+                <li>ECS</li>
+                <li>ECR</li>
+                <li>EC2</li>
+                <li>Cloudfront</li>
+                <li>S3</li>
+                <li>Athena</li>
+                <li>DynamoDB</li>
+                <li>RDS</li>
+                <li>CloudFormation</li>
+                <li>Docker</li>
+                <li>Elastic Beanstalk</li>
+                <li>CloudWatch</li>
+                <li>Route53</li>
+                <li>Lambda</li>
+                <li>Api Gateway</li>
+                <li>Terraform</li>
+            </ul>
+        </div>
+
+        <div class="skill-card">
+            <h3>Web Technologies</h3>
+            <ul>
+                <li>Flask</li>
+                <li>FastAPI</li>
+                <li>Django</li>
+                <li>WebSocket</li>
+                <li>JWT</li>
+                <li>SSO</li>
+                <li>REST APIs</li>
+                <li>Microservices</li>
+            </ul>
+        </div>
+
+        <div class="skill-card">
+            <h3>Development Tools</h3>
+            <ul>
+                <li>Git</li>
+                <li>GitHub Actions</li>
+                <li>Vim</li>
+                <li>Tmux</li>
+                <li>VSCode</li>
+                <li>Test-Driven Development</li>
+                <li>Event-Driven Architecture</li>
+            </ul>
+        </div>
+
+        <div class="skill-card">
+            <h3>Scientific Libraries</h3>
+            <ul>
+                <li>Numpy</li>
+                <li>Scikit</li>
+                <li>Pandas</li>
+                <li>Pyarrow</li>
+                <li>Langchain</li>
+                <li>OpenAI</li>
+                <li>Anthropic</li>
+                <li>Matplotlib</li>
+                <li>OpenCV</li>
+                <li>Pillow</li>
+            </ul>
+        </div>
+
+        <div class="skill-card">
+            <h3>Other</h3>
+            <ul>
+                <li>Skateboarding</li>
+                <li>Bodyboarding</li>
+                <li>Fishing</li>
+                <li>Working out</li>
+                <li>Video Games</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="reinvent-section">
+    <div class="reinvent-header">
+        <h2>AWS re:Invent 2024 Experience</h2>
+        <p>Exploring cloud innovation, connecting with architects, and experiencing the future of AWS in Las Vegas</p>
+    </div>
+    <div class="media-grid">
+        <!-- Featured video (larger size) -->
+        <div class="media-item video">
+            <video controls>
+                <source src="https://thomasmartin.boccuto.net/IMG_4739.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="media-item video">
+            <img src="https://thomasmartin.boccuto.net/ai-pic-reinvent2024.JPG" alt="AI at re:Invent 2024">
+        </div>
+        <!-- Images -->
+        <div class="media-item">
+            <img src="https://thomasmartin.boccuto.net/IMG_4684.JPG" alt="AWS re:Invent moment 1">
+        </div>
+        <div class="media-item">
+            <img src="https://thomasmartin.boccuto.net/IMG_4686.JPG" alt="AWS re:Invent moment 2">
+        </div>
+        <div class="media-item">
+            <img src="https://thomasmartin.boccuto.net/IMG_4687.JPG" alt="AWS re:Invent moment 3">
+        </div>
+        <div class="media-item">
+            <img src="https://thomasmartin.boccuto.net/IMG_4712.JPG" alt="AWS re:Invent moment 4">
+        </div>
+        <div class="media-item">
+            <img src="https://thomasmartin.boccuto.net/IMG_4724.JPG" alt="AWS re:Invent moment 5">
+        </div>
+        <div class="media-item">
+            <img src="https://thomasmartin.boccuto.net/IMG_4731.JPG" alt="AWS re:Invent moment 6">
+        </div>
+        <div class="media-item">
+            <img src="https://thomasmartin.boccuto.net/IMG_4732.JPG" alt="AWS re:Invent moment 7">
+        </div>
+        <div class="media-item">
+            <img src="https://thomasmartin.boccuto.net/IMG_4733.JPG" alt="AWS re:Invent moment 8">
+        </div>
+        <div class="media-item">
+            <img src="https://thomasmartin.boccuto.net/IMG_4744.JPG" alt="AWS re:Invent moment 9">
+        </div>
+        <div class="media-item">
+            <img src="https://thomasmartin.boccuto.net/IMG_4745.JPG" alt="AWS re:Invent moment 10">
+        </div>
+        <div class="media-item">
+            <img src="https://thomasmartin.boccuto.net/IMG_4746.JPG" alt="AWS re:Invent moment 11">
+        </div>
+        <div class="media-item">
+            <img src="https://thomasmartin.boccuto.net/IMG_4759.JPG" alt="AWS re:Invent moment 12">
+        </div>
+        <div class="media-item">
+            <img src="https://thomasmartin.boccuto.net/IMG_4760.JPG" alt="AWS re:Invent moment 13">
+        </div>
+        <div class="media-item">
+            <img src="https://thomasmartin.boccuto.net/IMG_4766.JPG" alt="AWS re:Invent moment 14">
+        </div>
+        <div class="media-item">
+            <img src="https://thomasmartin.boccuto.net/IMG_4768.JPG" alt="AWS re:Invent moment 15">
+        </div>
+        <div class="media-item">
+            <img src="https://thomasmartin.boccuto.net/IMG_4743.jpg" alt="AWS re:Invent moment 16">
+        </div>
+    </div>
+</section>
+
+
+<section class="skateboarding-section">
+    <div class="skateboarding-header">
+        <h2>Skateboarding Highlights</h2>
+        <p>When I'm not coding, you can find me at the skatepark working on new tricks</p>
+    </div>
     
-    <table>
-        <tr>
-            <td>
-                <h3>Languages & Core</h3>
-                <ul>
-                    <li>Python3</li>
-                    <li>JavaScript</li>
-                    <li>Golang</li>
-                    <li>Swift</li>
-                    <li>SQL</li>
-                    <li>Bash</li>
-                    <li>HCL</li>
-                </ul>
-            </td>
-            <td>
-                <h3>Cloud & Infrastructure</h3>
-                <ul>
-                    <li>AWS IAM</li>
-                    <li>ECS</li>
-                    <li>ECR</li>
-                    <li>EC2</li>
-                    <li>Cloudfront</li>
-                    <li>S3</li>
-                    <li>Athena</li>
-                    <li>DynamoDB</li>
-                    <li>RDS</li>
-                    <li>CloudFormation</li>
-                    <li>Docker</li>
-                    <li>Elastic Beanstalk</li>
-                    <li>CloudWatch</li>
-                    <li>Route53</li>
-                    <li>Lambda</li>
-                    <li>Api Gateway</li>
-                    <li>Terraform</li>
-                </ul>
-            </td>
-            <td>
-                <h3>Web Technologies</h3>
-                <ul>
-                    <li>Flask</li>
-                    <li>FastAPI</li>
-                    <li>Django</li>
-                    <li>WebSocket</li>
-                    <li>JWT</li>
-                    <li>SSO</li>
-                    <li>REST APIs</li>
-                    <li>Microservices</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <h3>Development Tools</h3>
-                <ul>
-                    <li>Git</li>
-                    <li>GitHub Actions</li>
-                    <li>Vim</li>
-                    <li>Tmux</li>
-                    <li>VSCode</li>
-                    <li>Test-Driven Development</li>
-                    <li>Event-Driven Architecture</li>
-                </ul>
-            </td>
-            <td>
-                <h3>Scientific Libraries</h3>
-                <ul>
-                    <li>Numpy</li>
-                    <li>Scikit</li>
-                    <li>Pandas</li>
-                    <li>Pyarrow</li>
-                    <li>Langchain</li>
-                    <li>OpenAI</li>
-                    <li>Anthropic</li>
-                    <li>Matplotlib</li>
-                    <li>OpenCV</li>
-                    <li>Pillow</li>
-                </ul>
-            </td>
-            <td>
-                <h3>Other</h3>
-                <ul>
-                    <li>Skateboarding</li>
-                    <li>Bodyboarding</li>
-                    <li>Fishing</li>
-                    <li>Working out</li>
-                    <li>Video Games</li>
-                </ul>
-            </td>
-        </tr>
-    </table>
+    <div class="media-grid skateboarding-grid">
+        <!-- Video 1 -->
+        <div class="media-item video">
+            <bold> 2008 </bold>
+            <video controls>
+                <source src="https://thomasmartin.boccuto.net/2008-tommie-boccuto.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        
+        <!-- Video 2 -->
+        <div class="media-item video">
+        <bold> 2013 </bold>
+        <video controls>
+                <source src="https://thomasmartin.boccuto.net/sponsor-me-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+        </video>
+        </div>
+    </div>
+</section>
+
+<style>
+.skateboarding-section {
+    padding: 2rem 0;
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+
+.skateboarding-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.skateboarding-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.skateboarding-header p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skateboarding-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 0 2rem;
+}
+
+.skateboarding-grid .media-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+}
+
+.skateboarding-grid .media-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .skateboarding-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+    
+    .skateboarding-header h2 {
+        font-size: 2rem;
+    }
+}
+</style>
+
+
+
 </body>
 </html>
