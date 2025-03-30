@@ -69,10 +69,32 @@
             <div class="role">Founder</div>
             <ul>
             <li>Improved health checks resulting in reducing infrastructure costs by 25% of Elastic container service</li> 
-            <li>Improved haversine computation by denoramilzing columns from user table for posts. </li> 
+            <li>Developed advanced geospatial post retrieval system with:
+                <ul>
+                    <li><strong>Time Complexity:</strong> O(n log n + k), where:
+                        <ul>
+                            <li>n is the number of posts within the initial bounding box</li>
+                            <li>k is the number of posts returned (limited by the 'limit' parameter)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Space Complexity:</strong> O(n + k), where:
+                        <ul>
+                            <li>n is the number of posts within the initial bounding box (stored temporarily in query)</li>
+                            <li>k is the number of posts returned (stored in the result list)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Performance Optimizations:</strong>
+                        <ul>
+                            <li>Bounding Box Pre-filtering: Uses a rectangular bounding box filter to quickly eliminate posts that are definitely outside the search radius before performing the more computationally expensive Haversine distance calculation</li>
+                            <li>Indexed Queries: Relies on spatial, timestamp, and age indexes for efficient database access</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li> Denormalized post table to include age from user at post creation. </li>
             <li>Implemented real-time chat using Flask-SocketIO with room management</li>
             <li>Designed notification system for likes, comments, and replies</li>
-            <li>Implemented geospatial discovery using Haversine for location/age matching</li>
+            
             <li>Wrote terraform for  media architecture utilizing AWS S3/CloudFront integration</li>
             <li>Designed relational database utilizing SQLAlchemy ORM for developer happiness</li>
             <li>Implemented JWT auth with refresh tokens and CSRF protection</li>
